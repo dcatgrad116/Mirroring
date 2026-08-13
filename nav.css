@@ -1,0 +1,172 @@
+/* 全域重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/漸層底圖compressed.png);
+    background-size: cover;
+    background-position: center;
+    background-position: fixed;
+}
+
+/* 導覽列 */
+
+header {
+    width: 100%;
+    height: 130px;
+    background-color: #363F59;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-img {
+    width: 133px;
+    height: 130px;
+    object-fit: cover;
+    object-position: center;
+    transform: scale(2);
+    transform-origin: center;
+}
+
+.standard-text {
+    width: 149px;
+    height: 59px;
+    object-fit: cover;
+    object-position: center;
+}
+
+nav {
+    display: flex;
+    flex: 5;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 1.5rem;
+    font-family: Noto Sans TC;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav-button {
+    padding: 15px 30px;
+}
+
+nav hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.work {
+    border: 1px solid transparent;
+    text-decoration: underline #FFFFFF 1px;
+    text-underline-offset: 15px;
+    padding: 15px 30px;
+}
+
+.ex {
+    border: 1px solid transparent;
+    position: relative; 
+    text-decoration: none;
+    padding: 15px 170px 15px 30px;
+}
+
+.ex::after {
+    content: '';
+    position: absolute;
+    left: 30px;
+    right: 170px;
+    bottom: 0px;
+    height: 1px;
+    background-color: #FFFFFF;
+    transition: right 0.25s ease;
+}
+
+.dropdown:hover .work, .dropdown:hover .ex {
+    color: #C4C4C4;
+}
+
+.dropdown:hover .ex::after {
+    right: 30px;
+}
+
+/* nav button 上半部 */
+.dropdown:hover > a {
+    background-color: #363F59;
+    border: 1px solid rgba(255, 255, 255, 0.80);
+    border-bottom: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px; 
+}
+.dropdown-menu {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* nav button 下半部 */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+    background-color: #363F59;
+    border: 1px solid rgba(255, 255, 255, 0.80);
+    border-top: none;  
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px; 
+
+    opacity: 1; 
+    transform: translateY(0); 
+    pointer-events: auto;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    font-weight: 400;
+    padding: 15px 30px;
+    white-space: nowrap;
+}
+
+.social-media {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: 60px;
+    align-items: center;
+}
+
+.social-media a {
+    margin-left: 50px;
+}

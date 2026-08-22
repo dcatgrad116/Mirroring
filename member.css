@@ -84,7 +84,7 @@
 .dept-desc {
     font-family: "Noto Sans TC", sans-serif;
     font-weight: 400;
-    font-size: clamp(0.875rem, 1.39vw, 1.25rem);        /* 手機14 → 桌機20 */
+    font-size: clamp(0.875rem, 1.39vw, 1.25rem);
     line-height: 1.5;
     color: #FFFFFF;
     text-align: justify;

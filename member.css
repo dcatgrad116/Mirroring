@@ -77,7 +77,7 @@
 .dept-line {
     height: clamp(10px, 1.18vw, 17px);
     border: 0;
-    background: url(assets/星星線框.png) repeat-x left center;
+    background: url(assets/star.png) repeat-x left center;
     background-size: auto 100%;
 }
 

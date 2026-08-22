@@ -1,0 +1,204 @@
+.member {
+    height: auto;
+    padding-block: clamp(40px, 5.28vw, 76px) clamp(60px, 6.94vw, 100px);
+    padding-inline: clamp(16px, 3.6vw, 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(49px, 7.29vw, 105px);
+}
+
+/* 畢展團隊 */
+.team-intro {
+    width: 100%;
+    max-width: 1174px;
+    margin-inline: auto;
+    padding: clamp(30px, 9.9vw, 143px) clamp(24px, 15.8vw, 228px);
+    border-top-left-radius: clamp(75px, 15.97vw, 230px);
+    border-top-right-radius: clamp(75px, 15.97vw, 230px);
+    background-color: rgba(255, 255, 255, 0.10);
+    box-shadow: inset 0 4px 54.4px 0 rgba(255, 255, 255, 0.75);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 2.36vw, 34px);
+}
+
+.team-intro h1 {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    font-size: clamp(1.25rem, 2.5vw, 2.25rem);
+    letter-spacing: clamp(9px, 1.25vw, 18px);
+    color: #003660;
+    text-shadow: 0 0 11.1px rgba(255, 255, 255, 0.8);
+}
+
+.team-intro p {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 1.39vw, 1.25rem);
+    line-height: 1.5;
+    color: #FFFFFF;
+    text-shadow: 0 0 11.1px #82C1C6;
+}
+
+/* 部門區塊 */
+.dept {
+    width: 100%;
+    max-width: 1174px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 2.08vw, 30px);
+}
+
+/* 標題區：部門名＋星星線＋說明 */
+.dept-text {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(11px, 1.32vw, 19px);
+}
+
+/* 部門名＋星星線 */
+.dept-head {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.dept-head h2 {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 500;
+    font-size: clamp(1rem, 2.5vw, 2.25rem);
+    color: #FFFFFF;
+}
+
+/* 部門標題裝飾星星 */
+.dept-line {
+    height: clamp(10px, 1.18vw, 17px);
+    border: 0;
+    background: url(assets/星星線框.png) repeat-x left center;
+    background-size: auto 100%;
+}
+
+.dept-desc {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 1.39vw, 1.25rem);        /* 手機14 → 桌機20 */
+    line-height: 1.5;
+    color: #FFFFFF;
+    text-align: justify;
+}
+
+/* 校內展 / 校外展 */
+.subgroup {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 2.92vw, 42px);
+}
+
+.subgroup-title {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 1.39vw, 1.25rem);
+    line-height: 1.5;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+/* 成員網格 */
+
+.member-grid {
+    --cols: 5;
+    --card: clamp(130px, 14.31vw, 206px);
+    --colgap: clamp(24px, 2.15vw, 31px);
+    --rowgap: clamp(10px, 1.74vw, 25px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--rowgap) var(--colgap);
+    max-width: calc(var(--cols) * var(--card) + (var(--cols) - 1) * var(--colgap));
+    margin-inline: auto;
+}
+
+/* 召部 */
+.member-grid--zhao {
+    --cols: 3;
+    --rowgap: clamp(15px, 1.94vw, 28px);
+    --colgap: 24px;
+}
+@media (min-width: 992px) {
+    .member-grid--zhao { --colgap: clamp(24px, 11.87vw, 171px); }
+}
+
+/* 網頁 */
+.member-grid--web {
+    --cols: 3;
+}
+
+/* 校內展 */
+.member-grid--curation {
+    --rowgap: clamp(10px, 0.83vw, 12px);
+}
+
+/* 校外展 */
+.member-grid--curation-out {
+    --cols: 4;
+    --rowgap: clamp(10px, 0.83vw, 12px);
+}
+
+.member-card {
+    width: var(--card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(17px, 1.25vw, 18px);
+}
+
+/* 頭像圓框 */
+.avatar {
+    width: var(--card);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.member-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.member-caption .role {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.8125rem, 1.11vw, 1rem);
+    line-height: 1.44;
+    text-shadow: 0 0 5.2px rgba(255, 255, 255, 0.85);
+}
+
+.member-caption .name {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.875rem, 1.67vw, 1.5rem);
+    line-height: 1.42;
+    text-shadow: 0 0 5.8px #363F59;
+}
+
+/* 手機 */
+@media (max-width: 991px) {
+    .member-grid--lead-solo > .member-card:first-child {
+        width: 100%;
+    }
+}

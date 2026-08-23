@@ -175,6 +175,10 @@ nav hr {
     margin-left: clamp(33px, 3.47vw, 50px);
 }
 
+.mob-wrapper {
+    display: none;
+}
+
 /* 頁面內容 */
 main {
     height: 550px;
@@ -206,4 +210,172 @@ footer p {
 .email {
     color: #FFFFFF;
     font-size: 50px;
+}
+
+.contact{
+    display: none;
+}
+
+/* 手機版 */
+@media screen and (max-width: 393px) {
+
+    /* 導覽列 */
+    header {
+        max-width: 393px;
+        height: 120px;
+    }
+    
+    nav {
+        display: none;
+    }
+
+    .logo-img {
+        width: 64px;
+        height: auto;
+    }
+
+    .standard-text {
+        width: 80px;
+        height: auto;
+    }
+
+    .logo {
+        padding-top: 50px;
+    }
+
+    .social-media img {
+        width: 30px;
+    }
+
+    .social-media {
+        align-items: end;
+        margin-bottom: 17px;
+        margin-right: 0px;
+    }
+
+    .mob-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+        position: relative;
+    }
+
+    .menu {
+        color: #FFFFFF;
+        font-size: 30px;
+        margin-bottom: 20px;
+        /* margin-left: 33px;
+        margin-right: 22px; */
+        margin-left: clamp(25px, 8.40vw, 33px);     /* 原本 33px */
+        margin-right: clamp(17px, 5.60vw, 22px);    /* 原本 22px */
+        transform: rotate(0deg);
+        transition: transform 0.25s ease; 
+    }
+
+    .mob-nav {
+        display: flex;
+        position: absolute;
+        max-width: 393px;
+        height: auto;
+        align-items: self-start;
+        background-color: #363f59d1;
+        flex-direction: column;
+        top: 50px;
+        right: 0px;
+        padding: 16px 24px;
+        display: none;
+    }
+
+    .mob-nav a {
+        padding: 8px auto;
+        font-family: Noto Sans TC;
+        font-weight: 300;
+        font-size: 0.875rem;
+    }
+
+    .mob-work, .mob-ex {
+        display: flex;
+        flex-direction: row;
+        width: 350px;
+        justify-content: space-between;
+    }
+
+    .mob-nav-button {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .mob-dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        display: none;
+    }
+
+    .mob-dropdown-item {
+        padding: 5px 0 5px 30px;
+    }
+
+    .arrow {
+        color: #FFFFFF;
+        font-size: 30px;
+        transform: rotate(0deg);
+        transition: transform 0.25s ease; 
+    }
+
+    /* 打開、收合menu */
+    .mob-wrapper.open .mob-nav {
+        display: flex;
+    }
+
+    .mob-wrapper.open .menu {
+        transform: rotate(-180deg);
+    }
+
+    .arrow {
+    transform: rotate(0deg);
+    transition: transform 0.25s ease;
+    }
+
+    .mob-dropdown.open .mob-dropdown-menu{
+        display: flex;
+    }
+
+    .mob-dropdown.open .arrow {
+    transform: rotate(-180deg);
+    }
+
+    /* footer */
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        height: 90px;
+        width: auto;
+    }
+    .address > p {
+        font-size: 0.875rem;
+        text-align: center;
+    }
+
+    .email {
+        display: none;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: row;
+        gap: 36px;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .mob-email {
+        color: #FFFFFF;
+        font-size: 20px;
+    }
+
+    .contact img {
+        width: 20px;
+        height: 20px;
+    }
 }

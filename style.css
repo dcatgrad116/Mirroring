@@ -1,0 +1,528 @@
+/* ---------- 全域重置 ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    background-image: url(assets/漸層底圖compressed.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow-x: hidden; 
+}
+
+/* 導覽列 */
+
+header {
+    width: 100%;
+    position: relative;
+    z-index: 100;
+    height: clamp(85px, 9.03vw, 130px);
+    background-color: #363F59;
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo-img {
+    width: clamp(86px, 9.24vw, 133px);
+    height: clamp(85px, 9.03vw, 130px);
+    object-fit: cover;
+    object-position: center;
+    transform: scale(2);
+    transform-origin: center;
+}
+
+.standard-text {
+    width: clamp(97px, 10.35vw, 149px);
+    height: clamp(38px, 4.10vw, 59px); 
+    object-fit: cover;
+    object-position: center;
+}
+
+nav {
+    display: flex;
+    flex: 5;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    gap: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: clamp(1rem, 1.67vw, 1.5rem);
+    font-family: Noto Sans TC;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav-button {
+    padding: clamp(10px, 1.04vw, 15px) clamp(20px, 2.08vw, 30px);
+}
+
+nav hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.work {
+    border: 1px solid transparent;
+    text-decoration: underline #FFFFFF 1px;
+    text-underline-offset: clamp(10px, 1.04vw, 15px);
+    padding: clamp(10px, 1.04vw, 15px) clamp(20px, 2.08vw, 30px);
+}
+
+.ex {
+    border: 1px solid transparent;
+    position: relative;
+    text-decoration: none;
+    padding: clamp(10px, 1.04vw, 15px) clamp(111px, 11.81vw, 170px) clamp(10px, 1.04vw, 15px) clamp(20px, 2.08vw, 30px);
+}
+
+.ex::after {
+    content: '';
+    position: absolute;
+    left: clamp(20px, 2.08vw, 30px);
+    right: clamp(111px, 11.81vw, 170px);
+    bottom: 0px;
+    height: 1px;
+    background-color: #FFFFFF;
+    transition: right 0.25s ease;
+}
+
+.dropdown:hover .work, .dropdown:hover .ex {
+    color: #C4C4C4;
+}
+
+.dropdown:hover .ex::after {
+    right: 30px;
+}
+
+/* nav button 上半部 */
+.dropdown:hover > a {
+    background-color: #363F59;
+    border: 1px solid rgba(255, 255, 255, 0.80);
+    border-bottom: none;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.dropdown-menu {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+
+    opacity: 0;
+    transform: translateY(-10px); 
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* nav button 下半部 */
+.dropdown:hover .dropdown-menu {
+    display: flex;
+    background-color: #363F59;
+    border: 1px solid rgba(255, 255, 255, 0.80);
+    border-top: none;
+    border-bottom-left-radius: clamp(8px, 0.83vw, 12px);
+    border-bottom-right-radius: clamp(8px, 0.83vw, 12px);
+
+    opacity: 1; 
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-item {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: clamp(0.83rem, 1.39vw, 1.25rem);
+    font-weight: 300;
+    padding: clamp(10px, 1.04vw, 15px) clamp(20px, 2.08vw, 30px);
+    white-space: nowrap;
+}
+
+.social-media {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    margin-right: clamp(39px, 4.17vw, 60px);
+    align-items: center;
+}
+
+.social-media a {
+    margin-left: clamp(33px, 3.47vw, 50px);
+}
+
+.mob-wrapper {
+    display: none;
+}
+
+/* 頁面內容 */
+main {
+    height: auto;
+    margin: 100px 100px;
+    color: #FFFFFF;
+    position: relative;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    background-image: url(assets/鏡框-上.png);
+    transform: rotate(180deg);
+    background-size: contain;
+    opacity: 0.33;
+    width: 1063px;
+    height: 1313px;
+    top: -510px;
+    left: -425px;
+    overflow: hidden; 
+    pointer-events: none;
+    aspect-ratio: 1/1;
+}
+
+h1 {
+    font-size: 2.5rem;
+    /* font-size: clamp(1.67rem, 2.78vw, 2.5rem); */
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-shadow: 0px 4px 4px rgba(255, 255, 255, 0.26)
+}
+
+.star-line {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    text-align: center;
+    font-family: Noto Sans TC;
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 30px;
+    margin: 200px auto;
+}
+
+/* 作品 */
+.project-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/* .mirror-up {
+    flex: 1;
+    width: 300px;
+    height: 300px;
+} */
+
+.project-card, .thesis-card {
+    /* flex: 5; */
+    display: flex;
+    flex-direction: column;
+    width: 1060px;
+    height: 300px;
+    position: relative;
+    fill: rgba(84, 140, 161, 0.08);
+    filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(15px);
+}
+
+h2 {
+    font-size: 2.25rem;
+}
+
+.work-section > p {
+    text-align: center;
+}
+
+.project-button, .thesis-button {
+    align-self: flex-end;
+    padding: 8px 20px;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 50px;
+    border: 1px solid rgba(84, 140, 161, 0.40);
+    background: rgba(84, 140, 161, 0.15);
+    backdrop-filter: blur(6px);
+}
+
+/* .orange-star-up {
+    flex: 1;
+    width: 300px;
+    height: 300px;
+} */
+
+/* 展覽資訊 */
+.exhibition-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h3 {
+    font-family: "Noto Sans TC";
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 34px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.campus > p {
+    font-family: "Noto Sans TC";
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: start;
+}
+
+.map {
+    text-align: center;
+    margin-top: 36px;
+    margin-bottom: 76px;
+}
+
+.brands {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 130px;
+}
+
+.brand-logo {
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    border-radius: 20px;
+}
+
+.brand-logo a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Noto Sans TC;
+}
+
+/* footer */
+footer {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 60px;
+    margin-left: 60px;
+    align-items: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+footer p {
+    color: #FFFFFF;
+    font-size: clamp(0.83rem, 1.39vw, 1.25rem);
+    font-family: Noto Sans TC;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.email {
+    color: #FFFFFF;
+    font-size: 50px;
+}
+
+.contact{
+    display: none;
+}
+
+/* 手機版 */
+@media screen and (max-width: 393px) {
+
+    /* 導覽列 */
+    header {
+        max-width: 393px;
+        height: 120px;
+    }
+    
+    nav {
+        display: none;
+    }
+
+    .logo-img {
+        width: 64px;
+        height: auto;
+    }
+
+    .standard-text {
+        width: 80px;
+        height: auto;
+    }
+
+    .logo {
+        padding-top: 50px;
+    }
+
+    .social-media img {
+        width: 30px;
+    }
+
+    .social-media {
+        align-items: end;
+        margin-bottom: 17px;
+        margin-right: 0px;
+    }
+
+    .mob-wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-top: 70px;
+        position: relative;
+    }
+
+    .menu {
+        color: #FFFFFF;
+        font-size: 30px;
+        margin-bottom: 20px;
+        /* margin-left: 33px;
+        margin-right: 22px; */
+        margin-left: clamp(25px, 8.40vw, 33px);     /* 原本 33px */
+        margin-right: clamp(17px, 5.60vw, 22px);    /* 原本 22px */
+        transform: rotate(0deg);
+        transition: transform 0.25s ease; 
+    }
+
+    .mob-nav {
+        display: flex;
+        position: absolute;
+        max-width: 393px;
+        height: auto;
+        align-items: self-start;
+        background-color: #363f59d1;
+        flex-direction: column;
+        top: 50px;
+        right: 0px;
+        padding: 16px 24px;
+        display: none;
+    }
+
+    .mob-nav a {
+        padding: 8px auto;
+        font-family: Noto Sans TC;
+        font-weight: 300;
+        font-size: 0.875rem;
+    }
+
+    .mob-work, .mob-ex {
+        display: flex;
+        flex-direction: row;
+        width: 350px;
+        justify-content: space-between;
+    }
+
+    .mob-nav-button {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .mob-dropdown-menu {
+        display: flex;
+        flex-direction: column;
+        display: none;
+    }
+
+    .mob-dropdown-item {
+        padding: 5px 0 5px 30px;
+    }
+
+    .arrow {
+        color: #FFFFFF;
+        font-size: 30px;
+        transform: rotate(0deg);
+        transition: transform 0.25s ease; 
+    }
+
+    /* 打開、收合menu */
+    .mob-wrapper.open .mob-nav {
+        display: flex;
+    }
+
+    .mob-wrapper.open .menu {
+        transform: rotate(-180deg);
+    }
+
+    .arrow {
+    transform: rotate(0deg);
+    transition: transform 0.25s ease;
+    }
+
+    .mob-dropdown.open .mob-dropdown-menu{
+        display: flex;
+    }
+
+    .mob-dropdown.open .arrow {
+    transform: rotate(-180deg);
+    }
+
+    /* footer */
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        height: 90px;
+        width: auto;
+    }
+    .address > p {
+        font-size: 0.875rem;
+        text-align: center;
+    }
+
+    .email {
+        display: none;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: row;
+        gap: 36px;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .mob-email {
+        color: #FFFFFF;
+        font-size: 20px;
+    }
+
+    .contact img {
+        width: 20px;
+        height: 20px;
+    }
+}

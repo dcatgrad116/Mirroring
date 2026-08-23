@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+      <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- reset CSS -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="主頁面.css">
+    <link rel="stylesheet" href="nav&footer.css">
+         <!-- Google icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Noto+Sans+TC:wght@100..900&display=swap"
+        rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+    <title>主頁面</title>
+</head>
+<body>
+<!-- 頂部導覽列 Navbar -->
+<header>
+        <a class="logo" href="index.html">
+            <img class="logo-img" src="assets/LOGO.png" alt="Logo">
+            <img class="standard-text" src="assets/標準字.png" alt="標準字">
+        </a>
+        <nav>
+            <div class="nav-button">
+                <a href="index.html">首頁</a>
+            </div>
+            <div class="dropdown">
+                <a class="work" href="">作品介紹</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="">專題組</a>
+                    <a class="dropdown-item" href="paper-list.html" aria-current="page">論文組</a>
+                </div>
+            </div>
+            <div class="nav-button">
+                <a href="member.html">人員介紹</a>
+            </div>
+            <div class="dropdown">
+                <a class="ex" href="index.html#exhibition-info">展覽</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="index.html#exhibition-info-inside-campus">校內展｜12/01-12/03</a>
+                    <a class="dropdown-item" href="index.html#exhibition-info-outside-campus">校外展｜12/26-12/27</a>
+                </div>
+            </div>
+        </nav>
+        <div class="social-media">
+            <a href=""><img src="assets/ig.svg" alt="Instagram"></a>
+            <a href=""><img src="assets/fb.svg" alt="Facebook"></a>
+        </div>
+        <div class="mob-wrapper">
+            <span class="material-symbols-outlined menu">menu</span>
+            <nav class="mob-nav">
+                <div class="mob-nav-button">
+                    <a href="index.html">首頁</a>
+                </div>
+                <div class="mob-dropdown">
+                    <div class="mob-work">
+                        <a class="mob-nav-button" href="">作品介紹</a>
+                        <span class="material-symbols-outlined arrow">keyboard_arrow_down</span>
+                    </div>
+                    <div class="mob-dropdown-menu">
+                        <a class="mob-dropdown-item" href="">專題組</a>
+                        <a class="mob-dropdown-item" href="paper-list.html" aria-current="page">論文組</a>
+                    </div>
+                </div>
+                <div class="mob-nav-button">
+                    <a href="member.html">人員介紹</a>
+                </div>
+                <div class="mob-dropdown">
+                    <div class="mob-ex">
+                        <a class="mob-nav-button" href="index.html#exhibition-info">展覽資訊</a>
+                        <span class="material-symbols-outlined arrow">keyboard_arrow_down</span>
+                    </div>
+                    <div class="mob-dropdown-menu">
+                        <a class="mob-dropdown-item" href="index.html#exhibition-info-inside-campus">校內展｜12/01-12/03</a>
+                        <a class="mob-dropdown-item"
+                            href="index.html#exhibition-info-outside-campus">校外展｜12/26-12/27</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主內容區 -->
+    <main class="overview-container">
+    <section class="hero-image-section">
+    <!-- 主視覺底圖 -->
+    <img class="hero-main-img" src="assets/cover.png" alt="作品介紹主視覺">
+    
+
+    
+    <!-- 置中文字內容與向下互動箭頭 -->
+    <div class="hero-content">
+        <h1>作 品 介 紹</h1>
+        <p class="hero-subtext">專題 11 件 ｜ 論文 8 件</p>
+<a href="#project-section" class="scroll-down-arrow" aria-label="前往專題組">
+ <svg width="150" height="52" viewBox="0 0 100 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+     
+        <polygon points="50,16 22,2 14,6 50,24 86,6 78,2" fill="white" />
+        <polygon points="50,40 10,20 2,24 50,48 98,24 90,20" fill="white" />
+    </svg>
+</a>  
+    </div>
+</section>
+        <!-- ================= 1. 專題組 ================= -->
+<section class="work-section" id="project-section">
+    <!-- 右側裝飾 -->
+    <div class="deco-irregular">
+        <img src="assets/斑駁.png" alt="元素">
+    </div>
+
+    <div class="section-header">
+        <h2>專題組 ｜ 11 件</h2>
+        <div class="diamond-divider">
+            <img src="assets/星星線框.png" alt="線條">
+            <img src="assets/星星線框.png" alt="線條">
+        </div>
+        <p class="section-desc">
+            專題組做什麼……Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        </p>
+    </div>
+
+    <div class="slider-container">
+        <!-- 專題組輪播框 -->
+<div class="glass-slider-frame">
+   
+    <div class="slider-track-wrapper">
+        <div class="slider-track" id="project-track">
+            <div class="slide-item"><a href="專題.html" target="_blank" rel="noopener noreferrer"><img src="assets/DSC00271.JPG" alt="專題 01"></a></div>
+            <div class="slide-item"><a href="專題.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題02.jpg" alt="專題 02"></a></div>
+            <div class="slide-item"><a href="" target="_blank" rel="noopener noreferrer"><img src="assets/專題03.jpg" alt="專題 03"></a></div>
+            <div class="slide-item"><a href="" target="_blank" rel="noopener noreferrer"><img src="assets/專題04.jpg" alt="專題 04"></a></div>
+            <div class="slide-item"><a href="" target="_blank" rel="noopener noreferrer"><img src="assets/專題05.jpg" alt="專題 05"></a></div>
+            <div class="slide-item"><a href="" target="_blank" rel="noopener noreferrer"><img src="assets/專題06.jpg" alt="專題 06"></a></div>
+            <div class="slide-item"><a href="" target="_blank" rel="noopener noreferrer"><img src="assets/專題07.jpg" alt="專題 07"></a></div>
+            <div class="slide-item"><a href="" target="_blank" rel="noopener noreferrer"><img src="assets/專題08.jpg" alt="專題 08"></a></div>
+            <div class="slide-item"><a href="" target="_blank" rel="noopener noreferrer"><img src="assets/專題09.jpg" alt="專題 09"></a></div>
+            <div class="slide-item"><a href="" target="_blank" rel="noopener noreferrer"><img src="assets/專題10.jpg" alt="專題 10"></a></div>
+            <div class="slide-item"><a href="" target="_blank" rel="noopener noreferrer"><img src="assets/專題11.jpg" alt="專題 11"></a></div>
+        </div>
+    </div>
+
+    <!-- 左右切換按鈕 -->
+    <button class="slider-btn btn-prev" id="project-prev" type="button">&#10094;</button>
+    <button class="slider-btn btn-next" id="project-next" type="button">&#10095;</button>
+</div>
+
+        <!-- 專題左下角色 -->
+        <div class="char-badge project-char">
+            <img src="assets/海報角色_專題.png" alt="海報角色"> 
+        </div>
+
+        <!-- 專題右下按鈕 -->
+        <div class="action-badge project-btn">
+            <a href="專題一覽.html" class="btn-goto-list">作品一覽</a>
+        </div>
+    </div>
+</section>
+
+<!-- ================= 2. 論文組 ================= -->
+<section class="work-section" id="paper-section">
+    <div class="section-header">
+        <h2>論文組 ｜ 8 件</h2>
+        <div class="diamond-divider"> 
+            <img src="assets/星星線框.png" alt="線條">
+            <img src="assets/星星線框.png" alt="線條">
+        </div>
+        <p class="section-desc">
+            論文組做什麼……Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+        </p>
+    </div>
+
+    <div class="slider-container">
+        <!-- 專題組輪播框 -->
+<div class="glass-slider-frame">
+    
+    <div class="slider-track-wrapper">
+        <div class="slider-track" id="paper-track">
+            <div class="slide-item"><img src="assets/專題01.jpg" alt="論文 01"></div>
+            <div class="slide-item"><img src="assets/專題02.jpg" alt="論文 02"></div>
+            <div class="slide-item"><img src="assets/專題03.jpg" alt="論文 03"></div>
+            <div class="slide-item"><img src="assets/專題04.jpg" alt="論文 04"></div>
+            <div class="slide-item"><img src="assets/專題05.jpg" alt="論文 05"></div>
+            <div class="slide-item"><img src="assets/專題06.jpg" alt="論文 06"></div>
+            <div class="slide-item"><img src="assets/專題07.jpg" alt="論文 07"></div>
+            <div class="slide-item"><img src="assets/專題08.jpg" alt="論文 08"></div>
+            
+        </div>
+    </div>
+
+    <!-- 左右切換按鈕 -->
+    <button class="slider-btn btn-prev" id="paper-prev" type="button">&#10094;</button>
+<button class="slider-btn btn-next" id="paper-next" type="button">&#10095;</button>
+</div>
+
+        <!-- 論文左下按鈕 -->
+        <div class="action-badge paper-btn">
+            <a href="論文一覽.html" class="btn-goto-list">作品一覽</a>
+        </div>
+
+        <!-- 論文右下角色 -->
+        <div class="char-badge paper-char"> 
+            <img src="assets/海報角色_論文.png" alt="海報角色">
+        </div>
+    </div>
+
+    <!-- 左下角鏡球 -->
+    <div class="deco-mirror-sphere">
+        <img src="assets/鏡子.png" alt="元素">
+    </div>
+</section>
+    <!-- 頁尾 -->
+<footer>
+        <div class="address">
+            <p>國立陽明交通大學傳播與科技學系</p>
+            <p>地址：30272 新竹縣竹北市六家五路一段1號</p>
+        </div>
+        <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined email">mail</span></a>
+        <div class="contact">
+            <a href=""><img src="assets/ig.svg" alt="Instagram"></a>
+            <a href=""><img src="assets/fb.svg" alt="Facebook"></a>
+            <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined mob-email">mail</span></a>
+        </div>
+    </footer>
+    </main>
+
+
+
+       <!-- jQuery -->
+     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="主頁面.js"></script>
+</body>
+
+</html>

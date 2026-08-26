@@ -8,7 +8,7 @@
 html, body {
     width: 100%;
     height: 100%;
-    background-image: url(assets/漸層底圖compressed.png);
+    background-image: url(assets/background.png);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -108,7 +108,11 @@ nav hr {
     transition: right 0.25s ease;
 }
 
-.dropdown:hover .work, .dropdown:hover .ex {
+.nav-button > a:hover {
+    color: #C4C4C4;
+}
+
+.dropdown:hover .work, .dropdown:hover .ex, .dropdown-item:hover {
     color: #C4C4C4;
 }
 
@@ -216,13 +220,15 @@ footer p {
     display: none;
 }
 
-/* 手機版 */
-@media screen and (max-width: 393px) {
+/* 手機和平板 */
+@media screen and (max-width: 991px) {
 
     /* 導覽列 */
     header {
-        max-width: 393px;
+        max-width: 991px;
+        min-width: 320px;
         height: 120px;
+        align-items: stretch;
     }
     
     nav {
@@ -257,15 +263,12 @@ footer p {
         display: flex;
         flex-direction: column;
         margin-top: 70px;
-        position: relative;
     }
 
     .menu {
         color: #FFFFFF;
         font-size: 30px;
         margin-bottom: 20px;
-        /* margin-left: 33px;
-        margin-right: 22px; */
         margin-left: clamp(25px, 8.40vw, 33px);     /* 原本 33px */
         margin-right: clamp(17px, 5.60vw, 22px);    /* 原本 22px */
         transform: rotate(0deg);
@@ -275,14 +278,14 @@ footer p {
     .mob-nav {
         display: flex;
         position: absolute;
-        max-width: 393px;
-        height: auto;
-        align-items: self-start;
         background-color: #363f59d1;
         flex-direction: column;
-        top: 50px;
-        right: 0px;
+        top: 100%;
+        right: 0;
+        left: 0;
         padding: 16px 24px;
+        height: auto;
+        align-items: stretch;
         display: none;
     }
 
@@ -296,7 +299,7 @@ footer p {
     .mob-work, .mob-ex {
         display: flex;
         flex-direction: row;
-        width: 350px;
+        width: 100%;
         justify-content: space-between;
     }
 
@@ -318,6 +321,7 @@ footer p {
     .arrow {
         color: #FFFFFF;
         font-size: 30px;
+        justify-content: end;
         transform: rotate(0deg);
         transition: transform 0.25s ease; 
     }

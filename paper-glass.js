@@ -14,7 +14,7 @@
 
   var SELF = (document.currentScript && document.currentScript.src) || "";
   var BASE = SELF ? SELF.replace(/[^/]*$/, "") : "";
-  var BG_URL = BASE + "assets/漸層底圖compressed.png";
+  var BG_URL = BASE + "assets/background.png";
 
   function marginPx() { return PARAMS.margin > 0 ? PARAMS.margin : Math.max(140, PARAMS.thickness); }
 
@@ -175,6 +175,12 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     var ox = rect.left - M, oy = rect.top - M;
+
+    ctx.clearRect(0, 0, rw, rh);
+
+    var s0 = Math.max(rw / bg.naturalWidth, rh / bg.naturalHeight);
+    var w0 = bg.naturalWidth * s0, h0 = bg.naturalHeight * s0;
+    ctx.drawImage(bg, (rw - w0) / 2, (rh - h0) / 2, w0, h0);
 
     var vw = window.innerWidth, vh = window.innerHeight;
     var s = Math.max(vw / bg.naturalWidth, vh / bg.naturalHeight);

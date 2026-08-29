@@ -16,15 +16,22 @@
         rel="stylesheet">
     <!-- style CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <title>鏡行式首頁</title>
 </head>
 
 <body>
 
+    <!-- 進場影片 -->
+    <div id="intro-video">
+        <video id="intro-video-player" autoplay muted playsinline></video>
+    </div>
+
     <header>
         <a class="logo" href="index.html">
             <img class="logo-img" src="assets/LOGO.png" alt="Logo">
-            <img class="standard-text" src="assets/標準字.png" alt="標準字">
+            <img class="standard-text" src="assets/logotype.png" alt="標準字">
         </a>
         <nav>
             <div class="nav-button">
@@ -86,109 +93,120 @@
         </div>
     </header>
 
-    <main>
-        <section class="intro">
-            <h1>畢製主題介紹</h1>
-            <img class="star-line" src="assets/星星線框.png" alt="星星線框">
-            <p>
-                「鏡子」是觀看自我的媒介，能反映當下最誠實的樣貌，亦隨著心境與鏡面變化，反射出不同的映像。
-                <br>
-                每一件作品，都是創作者價值的倒影，也記錄著我們這場關於成長的進行式，未曾停止。
-            </p>
-        </section>
-        <section class="works-section">
-            <h1>作品區（專題／論文）</h1>
-            <img class="star-line" src="assets/星星線框.png" alt="星星線框">
-            <div class="project-group">
-                <!-- <img class="mirror mirror-up" src="assets/鏡子.png" alt="鏡子"> -->
-                <div class="project-card">
-                    <h2>專題組</h2>
-                    <p>
-                        這是專題組的簡述。Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsa sit harum itaque.
-                        Fugiat neque harum dolor molestiae eaque, suscipit facere aliquam minus mollitia sequi quasi
-                        reprehenderit delectus, laborum vitae!
-                    </p>
-                    <button class="project-button">了解更多</button>
-                </div>
-                <!-- <img class="orange-star-up" src="assets/橘星.png" alt="橘星"> -->
-            </div>
-            <div class="thesis-group">
-                <!-- <img class="mirror mirror-down" src="assets/鏡子.png" alt="鏡子"> -->
-                <div class="thesis-card">
-                    <h2>論文組</h2>
-                    <p>
-                        這是論文組的簡述。簡述 Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsa sit harum
-                        itaque.
-                        Fugiat neque harum dolor molestiae eaque, suscipit facere aliquam minus mollitia sequi quasi
-                        reprehenderit delectus, laborum vitae!
-                    </p>
-                    <button class="thesis-button">了解更多</button>
-                </div>
-                <!-- <img class="orange-star-down" src="assets/橘星.png" alt="橘星"> -->
-            </div>
-        </section>
-        <section class="exhibition-info" id="exhibition-info">
-            <h1>展覽資訊</h1>
-            <img class="star-line" src="assets/星星線框.png" alt="星星線框">
-            <div class="exhibition-cards">
-                <div class="campus inside-campus" id="exhibition-info-inside-campus">
-                    <h3>校內展</h3>
-                    <p>時間：2026/12/01~2026/12/03</p>
-                    <p>地點：陽明交大人社二館大廳</p>
-                    <div class="map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.2478662565427!2d120.99765407558544!3d24.786964677977256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836103970f353%3A0xf965d5d471047d6d!2z5ZyL56uL6Zm95piO5Lqk6YCa5aSn5a24IOS6uuaWh-ekvuacg-WtuOmZouS6jOmkqA!5e0!3m2!1szh-TW!2stw!4v1787326902156!5m2!1szh-TW!2stw"
-                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="strict-origin-when-cross-origin">
-                        </iframe>
+    <div class="adjust">
+        <main>
+            <section class="intro">
+                <h1>畢製主題介紹</h1>
+                <img class="star-line" src="assets/starline3.png" alt="星星線框">
+                <p>
+                    「鏡子」是觀看自我的媒介，能反映當下最誠實的樣貌，亦隨著心境與鏡面變化，反射出不同的映像。
+                    <br>
+                    每一件作品，都是創作者價值的倒影，也記錄著我們這場關於成長的進行式，未曾停止。
+                </p>
+            </section>
+            <section class="works-section">
+                <h1>作品區（專題／論文）</h1>
+                <img class="star-line" src="assets/starline3.png" alt="星星線框">
+                <div class="project-group">
+                    <div class="project-group2">
+                        <!-- <img class="mirror mirror-up" src="assets/鏡子.png" alt="鏡子"> -->
+                        <div class="project-card">
+                            <h2>專題組</h2>
+                            <p>
+                                這是專題組的簡述。Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsa sit harum
+                                itaque.
+                                Fugiat neque harum dolor molestiae eaque, suscipit facere aliquam minus mollitia sequi
+                                quasi
+                                reprehenderit delectus, laborum vitae!
+                            </p>
+                            <button class="project-button">了解更多</button>
+                        </div>
                     </div>
                 </div>
-                <div class="campus outside-campus" id="exhibition-info-outside-campus">
-                    <h3>校外展</h3>
-                    <p>時間：2026/12/26~2026/12/27</p>
-                    <p>地點：台北樹心會館</p>
-                    <div class="map">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8163454078503!2d121.5066415562968!3d25.040305946299394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a909de222b4f%3A0x72d1fed4818de79c!2z5qi55b-D5pyD6aSo!5e0!3m2!1szh-TW!2stw!4v1787326847962!5m2!1szh-TW!2stw"
-                            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="strict-origin-when-cross-origin">
-                        </iframe>
+                <div class="thesis-group">
+                    <div class="thesis-group2">
+                        <div class="thesis-card">
+                            <h2>論文組</h2>
+                            <p>
+                                這是論文組的簡述。簡述 Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ipsa sit
+                                harum
+                                itaque.
+                                Fugiat neque harum dolor molestiae eaque, suscipit facere aliquam minus mollitia sequi
+                                quasi
+                                reprehenderit delectus, laborum vitae!
+                            </p>
+                            <button class="thesis-button">了解更多</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <section class="sponsor">
-            <h1>贊助廠商品牌</h1>
-            <img class="star-line" src="assets/星星線框.png" alt="星星線框">
-            <div class="brands">
-                <div class="brand-logo">
-                    <a href="">品牌logo</a>
+            </section>
+            <section class="exhibition-info" id="exhibition-info">
+                <h1>展覽資訊</h1>
+                <img class="star-line" src="assets/starline3.png" alt="星星線框">
+                <div class="exhibition-cards">
+                    <div class="campus inside-campus" id="exhibition-info-inside-campus">
+                        <h3>校內展</h3>
+                        <p>時間：2026/12/01~2026/12/03
+                            <br>
+                            地點：陽明交大人社二館大廳
+                        </p>
+                        <div class="map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.2478662565427!2d120.99765407558544!3d24.786964677977256!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346836103970f353%3A0xf965d5d471047d6d!2z5ZyL56uL6Zm95piO5Lqk6YCa5aSn5a24IOS6uuaWh-ekvuacg-WtuOmZouS6jOmkqA!5e0!3m2!1szh-TW!2stw!4v1787326902156!5m2!1szh-TW!2stw"
+                                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="campus outside-campus" id="exhibition-info-outside-campus">
+                        <h3>校外展</h3>
+                        <p>時間：2026/12/26~2026/12/27
+                            <br>
+                            地點：台北樹心會館
+                        </p>
+                        <div class="map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.8163454078503!2d121.5066415562968!3d25.040305946299394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a909de222b4f%3A0x72d1fed4818de79c!2z5qi55b-D5pyD6aSo!5e0!3m2!1szh-TW!2stw!4v1787326847962!5m2!1szh-TW!2stw"
+                                width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
-                <div class="brand-logo">
-                    <a href="">品牌logo</a>
+            </section>
+            <section class="sponsor">
+                <h1>贊助廠商品牌</h1>
+                <img class="star-line" src="assets/starline3.png" alt="星星線框">
+                <div class="brands">
+                    <div class="brand-logo">
+                        <a href="">品牌logo</a>
+                    </div>
+                    <div class="brand-logo">
+                        <a href="">品牌logo</a>
+                    </div>
+                    <div class="brand-logo">
+                        <a href="">品牌logo</a>
+                    </div>
+                    <div class="brand-logo">
+                        <a href="">品牌logo</a>
+                    </div>
                 </div>
-                <div class="brand-logo">
-                    <a href="">品牌logo</a>
-                </div>
-                <div class="brand-logo">
-                    <a href="">品牌logo</a>
-                </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <footer>
-        <div class="address">
-            <p>國立陽明交通大學傳播與科技學系</p>
-            <p>地址：30272 新竹縣竹北市六家五路一段1號</p>
-        </div>
-        <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined email">mail</span></a>
-        <div class="contact">
-            <a href=""><img src="assets/ig.svg" alt="Instagram"></a>
-            <a href=""><img src="assets/fb.svg" alt="Facebook"></a>
-            <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined mob-email">mail</span></a>
-        </div>
-    </footer>
+        <footer>
+            <div class="address">
+                <p>國立陽明交通大學傳播與科技學系</p>
+                <p>地址：30272 新竹縣竹北市六家五路一段1號</p>
+            </div>
+            <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined email">mail</span></a>
+            <div class="contact">
+                <a href=""><img src="assets/ig.svg" alt="Instagram"></a>
+                <a href=""><img src="assets/fb.svg" alt="Facebook"></a>
+                <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined mob-email">mail</span></a>
+            </div>
+        </footer>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>

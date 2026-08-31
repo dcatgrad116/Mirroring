@@ -1,0 +1,257 @@
+/* ==========================================================================
+   論文組 作品一覽 (paper-list.css)
+   ========================================================================== */
+
+.worklist {
+    height: auto;
+    position: relative;
+    overflow-x: clip;
+    padding-block: clamp(44px, 7.64vw, 110px) clamp(40px, 4.2vw, 60px);
+    padding-inline: clamp(12px, 3.6vw, 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(24px, 3.6vw, 52px);
+}
+
+/* 頂部 Hero 標題區 */
+.work-hero {
+    width: 100%;
+    max-width: 1160px;
+    margin-inline: auto;
+    padding: clamp(41px, 10.8vw, 156px) clamp(16px, 15vw, 470px);
+    border-top-left-radius: clamp(50px, 15.97vw, 230px);
+    border-top-right-radius: clamp(50px, 15.97vw, 230px);
+    background-color: rgba(255, 255, 255, 0.10);
+    box-shadow: inset 0 4px 54.4px 0 rgba(255, 255, 255, 0.75);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.work-hero p {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    white-space: nowrap;
+    color: #003660;
+    text-shadow: 0 0 11.1px rgba(255, 255, 255, 0.8);
+}
+
+.work-hero .kicker {
+    font-size: clamp(1rem, 2.5vw, 2.25rem);
+    letter-spacing: clamp(4.8px, 0.75vw, 10.8px);
+}
+
+.work-hero .heading {
+    font-size: clamp(1.25rem, 2.78vw, 2.5rem);
+    letter-spacing: clamp(10px, 1.39vw, 20px);
+    line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+    .work-hero p {
+        color: #FFFFFF;
+    }
+}
+
+/* 作品清單列表 (桌機版：單欄交錯排列) */
+.work-list {
+    width: 100%;
+    max-width: 1160px;
+    margin-inline: auto;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(32px, 4vw, 56px);
+}
+
+.work-item {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 3.79vw, 44px);
+    color: inherit;
+    text-decoration: none;
+}
+
+/* 統一方框長寬比與滿版設定 */
+.work-media {
+    flex-shrink: 0;
+    width: 48%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border-radius: clamp(14px, 2.43vw, 35px);
+    background-color: rgba(130, 193, 198, 0.45);
+    box-shadow: inset 0 4px 25px 6px rgba(255, 255, 255, 0.65);
+    overflow: hidden;
+}
+
+.work-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.work-text {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 0.6vw, 12px);
+}
+
+.work-no {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 1.39vw, 1.25rem);
+    line-height: 1.5;
+    color: #FFFFFF;
+}
+
+.work-title {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 500;
+    font-size: clamp(0.9rem, 2vw, 1.75rem);
+    line-height: 1.4;
+    color: #FFFFFF;
+    text-align: justify;
+}
+
+.work-tags {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* 桌機版右側圖片項目 */
+.work-item--right .work-media {
+    order: 2;
+}
+
+/* 底部跳轉按鈕 */
+.to-topic {
+    align-self: center;
+    margin-top: clamp(24px, 3.6vw, 52px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 19px 63px;
+    line-height: 1.25;
+    border: 2px solid #548CA1;
+    border-radius: 50px;
+    background-image: linear-gradient(113deg, rgba(84, 140, 161, 0.3) 10%, rgba(54, 63, 89, 0.3) 68%);
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    white-space: nowrap;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s ease;
+}
+
+.to-topic:hover {
+    transform: scale(1.03);
+}
+
+/* 背景裝飾球 */
+.work-deco {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.work-deco img {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.deco-star {
+    left: 12%;
+    top: 67%;
+    width: clamp(180px, 22.2vw, 320px);
+    transform: rotate(162.24deg);
+}
+
+.deco-ball6 {
+    left: 59.7%;
+    top: 40.7%;
+    width: clamp(200px, 24.95vw, 359px);
+    transform: rotate(-102.72deg);
+}
+
+/* 768px 以上隱藏標籤 */
+@media (min-width: 768px) {
+    .work-tags {
+        display: none;
+    }
+}
+
+/* ==========================================================================
+   平板與手機版：一律一排兩格 (<= 991px)
+   ========================================================================== */
+@media (max-width: 991px) {
+    .work-deco,
+    .to-topic {
+        display: none;
+    }
+
+    .work-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 嚴格固定一排兩格 */
+        gap: clamp(16px, 4vw, 24px) clamp(8px, 2.5vw, 16px);
+    }
+
+    .work-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .work-media {
+        width: 100%;
+        aspect-ratio: 16 / 9; /* 保持相同的 16:9 比例 */
+        height: auto;
+        border-radius: clamp(10px, 2.5vw, 16px);
+        box-shadow: inset 0 4px 15px 3px rgba(255, 255, 255, 0.5);
+    }
+
+    .work-item--right .work-media {
+        order: 0; /* 手機上所有卡片一律圖在上、文在下 */
+    }
+
+    .work-text {
+        gap: 4px;
+    }
+
+    .work-no {
+        color: #003660;
+        font-weight: 700;
+        font-size: clamp(0.75rem, 3vw, 0.95rem);
+    }
+
+    .work-title {
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 700;
+        font-size: clamp(0.75rem, 2.8vw, 0.95rem);
+        line-height: 1.35;
+        /* 防止雙欄中文標題過長破版，超出時自動省略號 */
+        display: -webkit-box;
+        
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .work-tags {
+        font-size: clamp(0.65rem, 2.2vw, 0.75rem);
+        word-break: break-all;
+    }
+}

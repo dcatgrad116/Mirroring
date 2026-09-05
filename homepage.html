@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- reset CSS -->
     <link rel="stylesheet" href="reset.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="homepage.css">
     <link rel="stylesheet" href="nav&footer.css">
-         <!-- Google icon -->
+    <!-- Google icon -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -17,14 +18,15 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Chiron+GoRound+TC:wght@200..900&family=Noto+Sans+TC:wght@100..900&display=swap"
         rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
     <title>主頁面</title>
 </head>
+
 <body>
-<!-- 頂部導覽列 Navbar -->
-<header>
+    <!-- 頂部導覽列 Navbar -->
+    <header>
         <a class="logo" href="index.html">
             <img class="logo-img" src="assets/LOGO.png" alt="Logo">
             <img class="standard-text" src="assets/logotype.png" alt="標準字">
@@ -36,7 +38,7 @@
             <div class="dropdown">
                 <a class="work" href="">作品介紹</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="">專題組</a>
+                    <a class="dropdown-item" href="">畢製組</a>
                     <a class="dropdown-item" href="paper-list.html" aria-current="page">論文組</a>
                 </div>
             </div>
@@ -67,7 +69,7 @@
                         <span class="material-symbols-outlined arrow">keyboard_arrow_down</span>
                     </div>
                     <div class="mob-dropdown-menu">
-                        <a class="mob-dropdown-item" href="">專題組</a>
+                        <a class="mob-dropdown-item" href="">畢製組</a>
                         <a class="mob-dropdown-item" href="paper-list.html" aria-current="page">論文組</a>
                     </div>
                 </div>
@@ -91,151 +93,183 @@
 
     <!-- 主內容區 -->
     <main class="overview-container">
-    <section class="hero-image-section">
-    <!-- 主視覺底圖 -->
-    <img class="hero-main-img" src="assets/cover.png" alt="作品介紹主視覺">
-    
+        <section class="hero-image-section">
+            <!-- 主視覺底圖 -->
+            <img class="hero-main-img" src="assets/cover.png" alt="作品介紹主視覺">
 
-    
-    <!-- 置中文字內容與向下互動箭頭 -->
-    <div class="hero-content">
-        <h1>作 品 介 紹</h1>
-        <p class="hero-subtext">專題 11 件 ｜ 論文 8 件</p>
-<a href="#project-section" class="scroll-down-arrow" aria-label="前往專題組">
- <svg width="150" height="52" viewBox="0 0 100 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-     
-        <polygon points="50,16 22,2 14,6 50,24 86,6 78,2" fill="white" />
-        <polygon points="50,40 10,20 2,24 50,48 98,24 90,20" fill="white" />
-    </svg>
-</a>  
-    </div>
-</section>
+
+
+            <!-- 置中文字內容與向下互動箭頭 -->
+            <div class="hero-content">
+                <h1>作 品 介 紹</h1>
+                <p class="hero-subtext">畢製 11 件 ｜ 論文 8 件</p>
+                <!-- 抱歉這邊有多加一塊文字，再麻煩姿予調整了！ -->
+                <p>十九組作品，如同十九道倒影，各自映現獨特的光芒。<br><br>
+                    從自身關注的議題與經驗出發，透過研究方法與創作媒介，將各自的思考、感受、提問與發現向外傳遞。<br><br>
+                    當這些獨立的視角彼此交會，我們得以從他人的認知中重新理解熟悉的事物，也看見自我與世界更豐富的可能性，以及不同視角下呈現的璀璨景色。<br><br>
+                    邀請你一起穿梭於倒影之間，依循不同的光與視線，閱讀作品所承載的故事，亦在親身體會之時，重新找尋專屬自己的某一面。
+                </p>
+                <a href="#project-section" class="scroll-down-arrow" aria-label="前往畢製組">
+                    <svg width="150" height="52" viewBox="0 0 100 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                        <polygon points="50,16 22,2 14,6 50,24 86,6 78,2" fill="white" />
+                        <polygon points="50,40 10,20 2,24 50,48 98,24 90,20" fill="white" />
+                    </svg>
+                </a>
+            </div>
+        </section>
         <!-- ================= 1. 專題組 ================= -->
-<section class="work-section" id="project-section">
-    <!-- 右側裝飾 -->
-    <div class="deco-irregular">
-        <img src="assets/mottled.png" alt="元素">
-    </div>
+        <section class="work-section" id="project-section">
+            <!-- 右側裝飾 -->
+            <div class="deco-irregular">
+                <img src="assets/mottled.png" alt="元素">
+            </div>
 
-    <div class="section-header">
-        <h2>專題組 ｜ 11 件</h2>
-        <div class="diamond-divider">
-            <img src="assets/starline.png" alt="線條">
-            <img src="assets/starline.png" alt="線條">
-        </div>
-        <p class="section-desc">
-            專題組做什麼……Lorem ipsum dolor sit amet, consectetur adipiscing elit...Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        </p>
-    </div>
+            <div class="section-header">
 
-    <div class="slider-container">
-        <!-- 專題組輪播框 -->
-<div class="glass-slider-frame">
-   
-    <div class="slider-track-wrapper">
-        <div class="slider-track" id="project-track">
-            <div class="slide-item"><a href="project/project01.html" target="_blank" rel="noopener noreferrer"><img src="assets/DSC00271.JPG" alt="專題 01"></a></div>
-            <div class="slide-item"><a href="project/project02.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題02.jpg" alt="專題 02"></a></div>
-            <div class="slide-item"><a href="project/project03.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題03.jpg" alt="專題 03"></a></div>
-            <div class="slide-item"><a href="project/project04.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題04.jpg" alt="專題 04"></a></div>
-            <div class="slide-item"><a href="project/project05.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題05.jpg" alt="專題 05"></a></div>
-            <div class="slide-item"><a href="project/project06.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題06.jpg" alt="專題 06"></a></div>
-            <div class="slide-item"><a href="project/project07.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題07.jpg" alt="專題 07"></a></div>
-            <div class="slide-item"><a href="project/project08.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題08.jpg" alt="專題 08"></a></div>
-            <div class="slide-item"><a href="project/project09.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題09.jpg" alt="專題 09"></a></div>
-            <div class="slide-item"><a href="project/project10.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題10.jpg" alt="專題 10"></a></div>
-            <div class="slide-item"><a href="project/project11.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題11.jpg" alt="專題 11"></a></div>
-        </div>
-    </div>
 
-    <!-- 左右切換按鈕 -->
-    <button class="slider-btn btn-prev" id="project-prev" type="button">&#10094;</button>
-    <button class="slider-btn btn-next" id="project-next" type="button">&#10095;</button>
-</div>
+                <h2>畢製組 ｜ 11 件</h2>
+                <div class="diamond-divider">
+                    <img src="assets/starline.png" alt="線條">
+                    <img src="assets/starline.png" alt="線條">
+                </div>
+                <p class="section-desc">
+                    十一組畢業製作作品，主題取材自生活經驗、個人感受與社會觀察，透過文字、影音、刊物、社群、網頁與沉浸式互動等多元媒介，將抽象想法轉為具體的創作成果。<br><br>
+                    內容從成長記憶、自我探索，延伸至地方文化、旅遊探索與日常觀察等面向。有些作品重新回望個人成長經驗，梳理自我與外界框架之間的關係；有些則透過訪談紀錄片、繪本與 Podcast
+                    節目，留存不同群體的故事與觀點；也有作品結合數位科技與沉浸體驗，重現地方文化與共同記憶，拓展觀眾參與作品的方式。<br><br>
+                    十一組作品選擇不同的媒介與表達手法，將對自我與世界的理解化為創作，呈現各具特色的創作視角。
+                </p>
+            </div>
 
-        <!-- 專題左下角色 -->
-        <div class="char-badge project-char">
-            <img src="assets/海報角色_專題.png" alt="海報角色"> 
-        </div>
+            <div class="slider-container">
+                <!-- 專題組輪播框 -->
+                <div class="glass-slider-frame">
 
-        <!-- 專題右下按鈕 -->
-        <div class="action-badge project-btn">
-            <a href="project-list.html" class="btn-goto-list">作品一覽</a>
-        </div>
-    </div>
-</section>
+                    <div class="slider-track-wrapper">
+                        <div class="slider-track" id="project-track">
+                            <div class="slide-item"><a href="project/project01.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/DSC00271.JPG" alt="畢製 01"></a></div>
+                            <div class="slide-item"><a href="project/project02.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題02.jpg" alt="畢製 02"></a></div>
+                            <div class="slide-item"><a href="project/project03.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題03.jpg" alt="畢製 03"></a></div>
+                            <div class="slide-item"><a href="project/project04.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題04.jpg" alt="畢製 04"></a></div>
+                            <div class="slide-item"><a href="project/project05.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題05.jpg" alt="畢製 05"></a></div>
+                            <div class="slide-item"><a href="project/project06.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題06.jpg" alt="畢製 06"></a></div>
+                            <div class="slide-item"><a href="project/project07.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題07.jpg" alt="畢製 07"></a></div>
+                            <div class="slide-item"><a href="project/project08.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題08.jpg" alt="畢製 08"></a></div>
+                            <div class="slide-item"><a href="project/project09.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題09.jpg" alt="專題 09"></a></div>
+                            <div class="slide-item"><a href="project/project10.html" target="_bla畢製"
+                                    rel="noopener noreferrer"><img src="assets/專題10.jpg" alt="畢製 10"></a></div>
+                            <div class="slide-item"><a href="project/project11.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題11.jpg" alt="畢製 11"></a></div>
+                        </div>
+                    </div>
 
-<!-- ================= 2. 論文組 ================= -->
-<!-- ================= 2. 論文組 ================= -->
-<section class="work-section" id="paper-section">
-    <div class="section-header">    
-        <h2>論文組 ｜ 8 件</h2>
-        <div class="diamond-divider"> 
-            <img src="assets/starline.png" alt="線條">
-            <img src="assets/starline.png" alt="線條">
-        </div>
-        <p class="section-desc">
-            論文組做什麼……Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-        </p>
-    </div>
+                    <!-- 左右切換按鈕 -->
+                    <button class="slider-btn btn-prev" id="project-prev" type="button">&#10094;</button>
+                    <button class="slider-btn btn-next" id="project-next" type="button">&#10095;</button>
+                </div>
 
-    <div class="slider-container">
-        <!-- 論文組輪播框 -->
-        <div class="glass-slider-frame">
-            <div class="slider-track-wrapper">
-                <div class="slider-track" id="paper-track">
-                    <div class="slide-item"><a href="papers/paper-01.html" target="_blank" rel="noopener noreferrer"><img src="assets/專題02.jpg" alt="論文 01"></a></div>
-                    <div class="slide-item"><a href="papers/paper-02.html" target="_blank" rel="noopener noreferrer"><img src="" alt="論文 02"></a></div>
-                    <div class="slide-item"><a href="papers/paper-03.html" target="_blank" rel="noopener noreferrer"><img src="" alt="論文 03"></a></div>
-                    <div class="slide-item"><a href="papers/paper-04.html" target="_blank" rel="noopener noreferrer"><img src="" alt="論文 04"></a></div>
-                    <div class="slide-item"><a href="papers/paper-05.html" target="_blank" rel="noopener noreferrer"><img src="" alt="論文 05"></a></div>
-                    <div class="slide-item"><a href="papers/paper-06.html" target="_blank" rel="noopener noreferrer"><img src="" alt="論文 06"></a></div>
-                    <div class="slide-item"><a href="papers/paper-07.html" target="_blank" rel="noopener noreferrer"><img src="" alt="論文 07"></a></div>
-                    <div class="slide-item"><a href="papers/paper-08.html" target="_blank" rel="noopener noreferrer"><img src="" alt="論文 08"></a></div>
+                <!-- 專題左下角色 -->
+                <div class="char-badge project-char">
+                    <img src="assets/海報角色_專題.png" alt="海報角色">
+                </div>
+
+                <!-- 專題右下按鈕 -->
+                <div class="action-badge project-btn">
+                    <a href="project-list.html" class="btn-goto-list">作品一覽</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= 2. 論文組 ================= -->
+        <!-- ================= 2. 論文組 ================= -->
+        <section class="work-section" id="paper-section">
+            <div class="section-header">
+                <h2>論文組 ｜ 8 件</h2>
+                <div class="diamond-divider">
+                    <img src="assets/starline.png" alt="線條">
+                    <img src="assets/starline.png" alt="線條">
+                </div>
+                <p class="section-desc">
+                    八組論文，將對日常生活與當代社會現象的細微觀察，變為具體的研究問題，藉由理論架構、訪談、文本分析、實驗與資料分析等研究方法，理解現象背後的原因、意義與關聯。<br><br>
+                    研究主題橫跨數位媒體、社會文化、創新科技等領域，從社群平台中的自我呈現與使用行為、流行文化與地方文化的意義建構，到人與 AI 協作中的互動與認知變化，重新檢視那些存在於日常之中、卻較少被留意的現象。<br><br>
+                    八組研究從不同角度回應當代社會中的媒體、科技與文化議題，提出多面向的研究發現。
+                </p>
+            </div>
+
+            <div class="slider-container">
+                <!-- 論文組輪播框 -->
+                <div class="glass-slider-frame">
+                    <div class="slider-track-wrapper">
+                        <div class="slider-track" id="paper-track">
+                            <div class="slide-item"><a href="papers/paper-01.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="assets/專題02.jpg" alt="論文 01"></a></div>
+                            <div class="slide-item"><a href="papers/paper-02.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="" alt="論文 02"></a></div>
+                            <div class="slide-item"><a href="papers/paper-03.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="" alt="論文 03"></a></div>
+                            <div class="slide-item"><a href="papers/paper-04.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="" alt="論文 04"></a></div>
+                            <div class="slide-item"><a href="papers/paper-05.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="" alt="論文 05"></a></div>
+                            <div class="slide-item"><a href="papers/paper-06.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="" alt="論文 06"></a></div>
+                            <div class="slide-item"><a href="papers/paper-07.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="" alt="論文 07"></a></div>
+                            <div class="slide-item"><a href="papers/paper-08.html" target="_blank"
+                                    rel="noopener noreferrer"><img src="" alt="論文 08"></a></div>
+                        </div>
+                    </div>
+
+                    <!-- 左右切換按鈕 -->
+                    <button class="slider-btn btn-prev" id="paper-prev" type="button">&#10094;</button>
+                    <button class="slider-btn btn-next" id="paper-next" type="button">&#10095;</button>
+                </div>
+
+                <!-- 論文左下按鈕 -->
+                <div class="action-badge paper-btn">
+                    <a href="paper-list.html" class="btn-goto-list">作品一覽</a>
+                </div>
+
+                <!-- 論文右下角色 -->
+                <div class="char-badge paper-char">
+                    <img src="assets/海報角色_論文.png" alt="海報角色">
                 </div>
             </div>
 
-            <!-- 左右切換按鈕 -->
-            <button class="slider-btn btn-prev" id="paper-prev" type="button">&#10094;</button>
-            <button class="slider-btn btn-next" id="paper-next" type="button">&#10095;</button>
-        </div>
+            <!-- 左下角鏡球 -->
+            <div class="deco-mirror-sphere">
+                <img src="assets/mirror.png" alt="元素">
+            </div>
 
-        <!-- 論文左下按鈕 -->
-        <div class="action-badge paper-btn">
-            <a href="paper-list.html" class="btn-goto-list">作品一覽</a>
-        </div>
-
-        <!-- 論文右下角色 -->
-        <div class="char-badge paper-char"> 
-            <img src="assets/海報角色_論文.png" alt="海報角色">
-        </div>
-    </div>
-
-    <!-- 左下角鏡球 -->
-    <div class="deco-mirror-sphere">
-        <img src="assets/mirror.png" alt="元素">
-    </div>
-    
-</section>
-    <footer>
-        <div class="address">
-            <p>國立陽明交通大學傳播與科技學系</p>
-            <p>地址：30272 新竹縣竹北市六家五路一段1號</p>
-        </div>
-        <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined email">mail</span></a>
-        <div class="contact">
-            <a href=""><img src="assets/ig.svg" alt="Instagram"></a>
-            <a href=""><img src="assets/fb.svg" alt="Facebook"></a>
-            <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined mob-email">mail</span></a>
-        </div>
-    </footer>
+        </section>
+        <footer>
+            <div class="address">
+                <p>國立陽明交通大學傳播與科技學系</p>
+                <p>地址：30272 新竹縣竹北市六家五路一段1號</p>
+            </div>
+            <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined email">mail</span></a>
+            <div class="contact">
+                <a href=""><img src="assets/ig.svg" alt="Instagram"></a>
+                <a href=""><img src="assets/fb.svg" alt="Facebook"></a>
+                <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined mob-email">mail</span></a>
+            </div>
+        </footer>
 
     </main>
 
- 
 
-       <!-- jQuery -->
-     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
     <script src="homepage.js"></script>
 </body>

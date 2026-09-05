@@ -80,6 +80,15 @@ body {
     margin-bottom: 50px;
 }
 
+.hero-content p {
+    font-family: "Noto Sans TC", sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 1.39vw, 1.25rem);
+    line-height: 1.5;
+    color: #FFFFFF;
+    text-shadow: 0 0 11.1px #82C1C6;
+}
+
 .hero-subtext {
     font-size: 2rem;
     font-weight: 400;

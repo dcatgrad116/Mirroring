@@ -271,6 +271,10 @@ h1 {
 }
 
 /* 作品 */
+.works-section {
+    margin-bottom: 50px;
+}
+
 .project-group {
     display: flex;
     flex-direction: row;
@@ -369,7 +373,7 @@ h1 {
     display: flex;
     flex-direction: column;
     width: clamp(689px, 73.61vw, 1060px);
-    height: clamp(169px, 18.06vw, 260px);
+    height: clamp(240px, calc(107.57px + 13.36vw), 300px);
     position: relative;
     border-radius: clamp(6.5px, 0.69vw, 10px);
     background-color: rgba(84, 140, 161, 0.08);
@@ -753,7 +757,7 @@ footer p {
 
     .project-card, .thesis-card {
     width: clamp(338px, 69.53vw, 689px);
-    height: clamp(169px, calc(296.6px - 12.87vw), 234px);
+    height: clamp(260px, calc(330.66px - 7.13vw), 300px);
     border-radius: 5px;
     }
 
@@ -795,6 +799,12 @@ footer p {
         width: 150px;
         height: 150px;
     }
+
+    .thesis-group2 {
+        margin-top: clamp(50px, calc(138.33px - 8.91vw), 100px);
+        margin-bottom: clamp(30px, calc(65.33px - 3.57vw), 50px);
+    }
+
     /* 展覽資訊 */
     .exhibition-info {
         margin-bottom: 50px;

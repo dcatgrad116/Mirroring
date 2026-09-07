@@ -1,0 +1,651 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif TC", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('assets/漸層底圖compressed.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ================= 版面容器 ================= */
+.overview-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 100px 20px;
+}
+
+/* ================= 頂部封面區塊 (桌機版：文字全在封面上) ================= */
+.hero-image-section {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -30px;
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 主視覺底圖 */
+.hero-main-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    opacity: 0.5;
+    filter: brightness(1.05) contrast(0.95);
+}
+
+/* 封面文字層（桌機與平板：絕對定位浮在圖中央） */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1500px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 6px;
+    color: #ffffff;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 25px;
+}
+
+.hero-subtext {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+
+.hero-content .hero-text {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(0, 0, 0, 0.8), 0 0 8px #82C1C6;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+/* 向下雙箭頭互動按鈕 */
+.scroll-down-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 30px;
+    animation: continuousArrowFlow 1.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+@keyframes continuousArrowFlow {
+    0% { transform: translateY(0); opacity: 0.95; }
+    50% { transform: translateY(12px); opacity: 0.45; }
+    100% { transform: translateY(0); opacity: 0.95; }
+}
+
+.scroll-down-arrow:active {
+    transform: translateY(6px) scale(0.92);
+}
+
+/* ================= 專題組 / 論文組 區塊 ================= */
+.work-section {
+    position: relative;
+    margin-bottom: 160px;
+}
+
+.section-header {
+    margin-bottom: 35px;
+    max-width: 1600px;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.diamond-divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    margin: 10px 0 16px 0;
+    overflow: hidden;
+}
+
+.diamond-divider img {
+    flex: 1;
+    width: 50%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.section-desc {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* ================= 輪播區域容器 ================= */
+.slider-container {
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.glass-slider-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 28px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.9), 0 12px 30px rgba(0, 0, 0, 0.15);
+    overflow: visible;
+}
+
+.glass-slider-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.3'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.slider-track-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    z-index: 3;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.slider-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.slide-item {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: #ffffff;
+}
+
+.slide-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* ================= 左右切換按鈕 ================= */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(120, 140, 175, 0.65);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    color: #ffffff;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease;
+    user-select: none;
+}
+
+.btn-prev { left: -23px; }
+.btn-next { right: -23px; }
+
+/* ================= 吉祥物角色 ================= */
+.char-badge {
+    position: absolute;
+    width: 260px;
+    height: auto;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 15;
+    overflow: visible;
+    cursor: pointer;
+    transform: translateY(0);
+    transform-origin: center center;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
+    filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.35));
+}
+
+.char-badge img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    transition: none !important;
+}
+.project-char img {
+    width: 400px;
+    
+}
+
+.paper-char img {
+    width: 400px;
+    transform: scaleX(-1) !important;
+}
+
+/* ================= 作品一覽按鈕 ================= */
+.action-badge {
+    position: absolute;
+    z-index: 15;
+}
+
+.btn-goto-list {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 36px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, rgba(120, 140, 170, 0.8), rgba(80, 100, 130, 0.8));
+    border: 1.5px solid rgba(255, 255, 255, 0.65);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+}
+
+/* ================= 獨立個別位置調整 ================= */
+.project-char { left: -140px; bottom: -280px; }
+.project-btn { right: -80px; bottom: -30px; }
+.paper-btn { left: -80px; bottom: -30px; }
+.paper-char { right: -120px; bottom: -260px; }
+
+/* 裝飾 */
+.deco-irregular {
+    position: absolute;
+    right: -360px;
+    top: 0px;
+    width: 360px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.deco-irregular img {
+    width: 100%;
+    height: auto;
+}
+
+.deco-mirror-sphere {
+    position: absolute;
+    left: -520px;
+    bottom: -650px;
+    width: 180px;
+    pointer-events: none;
+    z-index: 20;
+    margin-bottom: 150px;
+}
+
+.deco-mirror-sphere img {
+    width: 800px;
+    height: auto;
+}
+
+/* 回專題頁按鈕 */
+.back-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.btn-back-topic {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 56px;
+    border-radius: 36px;
+    background: linear-gradient(135deg, rgba(120, 140, 170, 0.85), rgba(80, 100, 130, 0.85));
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    letter-spacing: 3px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    transition: all 0.3s ease;
+}
+
+/* ================= 懸停 Hover 特效 (僅限有滑鼠之裝置) ================= */
+@media (hover: hover) {
+    .scroll-down-arrow:hover {
+        animation-play-state: running;
+        filter: drop-shadow(0 6px 16px rgba(255, 255, 255, 0.7));
+    }
+
+    .slider-btn:hover {
+        background: rgba(255, 255, 255, 0.4);
+        border-color: #ffffff;
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 6px 16px rgba(255, 255, 255, 0.5);
+    }
+
+    .project-char:hover,
+    .paper-char:hover {
+        transform: translateY(-8px) scale(1.05);
+        filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.45));
+    }
+
+    .btn-goto-list:hover {
+        background: linear-gradient(135deg, rgba(228, 230, 234, 0.95), rgba(128, 146, 172, 0.95));
+        color: #363F59;
+        border-color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-back-topic:hover {
+        background: linear-gradient(135deg, rgba(150, 170, 200, 1), rgba(100, 120, 150, 1));
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    }
+}
+
+/* ================= 平板版 RWD (<= 991px：文字仍在封面上) ================= */
+@media (max-width: 991px) {
+    .overview-container {
+        padding: 20px 20px 80px 20px;
+    }
+
+    .hero-image-section {
+        margin-bottom: 60px;
+
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        letter-spacing: 4px;
+        margin-bottom: 16px;
+        margin-top: 100px;
+    }
+
+    .hero-subtext {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        margin-bottom: 0px;
+    }
+
+    .hero-content .hero-text {
+        font-size: 0.8rem;
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .scroll-down-arrow svg {
+       display: none;
+    }
+
+    .work-section {
+        margin-bottom: 100px;
+        padding: 0 20px;
+    }
+
+    .slider-container {
+        width: 95%;
+        max-width: 720px;
+    }
+
+    .char-badge {
+        width: 180px;
+        height: auto;
+    }
+
+    .project-char { left: -90px; bottom: -120px; }
+    .paper-char { right: -40px; bottom: -90px; }
+    .project-btn { right: -30px; bottom: -20px; }
+    .paper-btn { left: -30px; bottom: -20px; }
+
+    .btn-goto-list {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+    }
+
+    .deco-irregular,
+    .deco-mirror-sphere {
+        display: none;
+    }
+
+    footer > a:has(.email),
+    .email {
+        display: none !important;
+    }
+}
+
+/* ================= 手機版 RWD (<= 440px：文字分離掉到封面正下方) ================= */
+@media (max-width: 440px) {
+    .overview-container {
+        padding: 0 0 50px 0;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* 1. 封面區塊：取消桌面寬度負邊距，改為直向彈性排版 */
+    .hero-image-section {
+        width: 100%;
+        left: auto;
+        right: auto;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 30px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: visible;
+    }
+
+    /* 2. 封面底圖：高度縮減固定，不再拉出多餘漸層 */
+    .hero-main-img {
+        width: 100%;
+        height: 220px;
+        max-height: 220px;
+        object-fit: cover;
+    }
+
+    /* 3. 內容容器：解除絕對定位，轉為正常文件流向 */
+    .hero-content {
+        position: static;
+        transform: none;
+        width: 100%;
+        padding: 0 20px;
+        display: block;
+    }
+
+    /* 4. 標題與副標題：絕對定位貼回 220px 的封面圖正中央 */
+    .hero-content h1 {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        width: 100%;
+        font-size: 1.55rem;
+        letter-spacing: 3px;
+        margin: 0;
+        text-shadow: 0 3px 12px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-subtext {
+        position: absolute;
+        top: 125px;
+        left: 0;
+        width: 100%;
+        font-size: 0.88rem;
+        letter-spacing: 1.5px;
+        margin: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    /* 5. 介紹內文：利用 margin-top 自然落於 220px 封面圖下方，完全不重疊 */
+    .hero-content .hero-text {
+        position: static;
+        margin-top: 25px;
+        font-size: 0.7rem;
+        line-height: 1.7;
+        letter-spacing: 0.5px;
+        color: rgba(255, 255, 255, 0.88);
+        text-align: justify;
+        text-shadow: none;
+        
+    }
+
+    .hero-content .hero-text br {
+        content: "";
+        display: block;
+        margin-top: 8px;
+    }
+
+    .scroll-down-arrow,
+    .char-badge {
+        display: none !important;
+    }
+
+    .work-section {
+        margin-bottom: 45px;
+        padding: 0 14px;
+    }
+
+    .section-header {
+        margin-bottom: 10px;
+    }
+
+    .section-header h2 {
+        font-size: 1.15rem;
+        margin-bottom: 4px;
+    }
+
+    .section-desc {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .slider-container {
+        width: 100%;
+        max-width: none;
+        margin: 10px 0 0 0;
+    }
+
+    .glass-slider-frame {
+        width: 100%;
+        border-radius: 14px;
+        padding: 6px;
+        aspect-ratio: 16 / 10;
+    }
+
+    .slider-track-wrapper {
+        border-radius: 10px;
+    }
+
+    .slider-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+        background: rgba(54, 63, 89, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(4px);
+        margin: 0;
+        z-index: 10;
+    }
+
+    .btn-prev { left: -6px; }
+    .btn-next { right: -6px; }
+
+    .action-badge {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 8px;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+
+    .btn-goto-list {
+        padding: 5px 14px;
+        font-size: 0.78rem;
+        border-radius: 16px;
+        letter-spacing: 1px;
+    }
+}

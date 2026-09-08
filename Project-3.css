@@ -516,19 +516,20 @@ nav hr {
     padding-right: 50px;
 }
 
-/* 左側裝飾 */
+/* ================= 裝飾球 ================= */
+
 .intro-sphere {
     left: -250px;
     top: -25%;
     width: 800px;
-   transform: rotate(95deg); 
+    transform: rotate(95deg); 
+    animation: realVerticalFloat 1.8s ease-in-out infinite alternate; /* 時間縮短，頻率變快 */
 }
 
 .visual-sphere {
     right: -390px;
     bottom: 55%;
     width: 1000px;
-
 }
 
 .deco-orbit-sphere {
@@ -540,6 +541,17 @@ nav hr {
 .deco-orbit-sphere img {
     width: 100%;
     height: auto;
+    display: block;
+}
+
+
+@keyframes realVerticalFloat {
+    0% {
+        top: -25%;
+    }
+    100% {
+        top: calc(-25% - 40px);
+    }
 }
 /* ================= 3. Visual Outcomes (無留邊滿版輪播) ================= */
 .slider-container {

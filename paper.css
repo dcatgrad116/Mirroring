@@ -20,12 +20,6 @@
     pointer-events: none;
 }
 
-.deco-burst {
-    left: 28.75%;
-    top: 30.4%;
-    width: clamp(67px, 12.5vw, 180px);
-}
-
 .deco-halo {
     left: 47.85%;
     top: 44.35%;
@@ -46,7 +40,6 @@
 
 @media (max-width: 440px) {
 
-    .deco-burst { left: 65.9%; top: 36.7%; }
     .deco-halo  { left: 62.6%; top: 71.9%; }
     .deco-ball  { left: -5.1vw; top: 63.1%; }
 }

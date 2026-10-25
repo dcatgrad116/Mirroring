@@ -21,15 +21,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
-     <!-- favicon -->
-    <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
-    <title>nav&footer</title>
     <title>主頁面</title>
 </head>
 
 <body>
     <!-- 頂部導覽列 Navbar -->
-    <header>
+  <header>
         <a class="logo" href="index.html">
             <img class="logo-img" src="assets/LOGO.png" alt="Logo">
             <img class="standard-text" src="assets/logotype.png" alt="標準字">
@@ -41,7 +38,7 @@
             <div class="dropdown">
                 <a class="work" href="homepage.html">作品介紹</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="project-list.html">專題組</a>
+                    <a class="dropdown-item" href="project-list.html">創作組</a>
                     <a class="dropdown-item" href="paper-list.html" aria-current="page">論文組</a>
                 </div>
             </div>
@@ -72,7 +69,7 @@
                         <span class="material-symbols-outlined arrow">keyboard_arrow_down</span>
                     </div>
                     <div class="mob-dropdown-menu">
-                        <a class="mob-dropdown-item" href="project-list.html">專題組</a>
+                        <a class="mob-dropdown-item" href="project-list.html">創作組</a>
                         <a class="mob-dropdown-item" href="paper-list.html" aria-current="page">論文組</a>
                     </div>
                 </div>
@@ -96,29 +93,26 @@
 
     <!-- 主內容區 -->
     <main class="overview-container">
-        <section class="hero-image-section">
-            <!-- 主視覺底圖 -->
-            <img class="hero-main-img" src="assets/cover.png" alt="作品介紹主視覺">
-
-
-
-            <!-- 置中文字內容與向下互動箭頭 -->
-            <div class="hero-content">
-                <h1>作 品 介 紹</h1>
-                <p class="hero-subtext">專題 11 件 ｜ 論文 8 件</p>
-                <!-- 抱歉這邊有多加一塊文字，再麻煩姿予調整了！ -->
-                <p>十九組作品，如同十九道倒影，各自映現獨特的光芒。<br><br>
-                    從自身關注的議題與經驗出發，透過研究方法與創作媒介，將各自的思考、感受、提問與發現向外傳遞。<br><br>
-                    當這些獨立的視角彼此交會，我們得以從他人的認知中重新理解熟悉的事物，也看見自我與世界更豐富的可能性，以及不同視角下呈現的璀璨景色。<br><br>
-                    邀請你一起穿梭於倒影之間，依循不同的光與視線，閱讀作品所承載的故事，亦在親身體會之時，重新找尋專屬自己的某一面。
-                </p>
-                <a href="#project-section" class="scroll-down-arrow" aria-label="前往專題組">
+          <section class="hero-image-section">
+    <img src="assets/cover.png" alt="封面主圖" class="hero-main-img">
+    <div class="hero-content">
+        <h1>作 品 介 紹</h1>
+        <p class="hero-subtext">專題 11 件 ｜ 論文 8 件</p>
+        <p class="hero-text">十九組作品，如同十九道倒影，各自映現獨特的光芒。<br><br>
+            從自身關注的議題與經驗出發，透過研究方法與創作媒介，將各自的思考、感受、提問與發現向外傳遞。<br><br>
+            當這些獨立的視角彼此交會，我們得以從他人的認知中重新理解熟悉的事物，也看見自我與世界更豐富的可能性，以及不同視角下呈現的璀璨景色。<br><br>
+            邀請你一起穿梭於倒影之間，依循不同的光與視線，閱讀作品所承載的故事，亦在親身體會之時，重新找尋專屬自己的某一面。
+        </p>
+        <a href="#project-section" class="scroll-down-arrow" aria-label="前往專題組">
                     <svg width="150" height="52" viewBox="0 0 100 52" fill="none" xmlns="http://www.w3.org/2000/svg">
 
                         <polygon points="50,16 22,2 14,6 50,24 86,6 78,2" fill="white" />
                         <polygon points="50,40 10,20 2,24 50,48 98,24 90,20" fill="white" />
                     </svg>
                 </a>
+    </div>
+</section>
+                
             </div>
         </section>
         <!-- ================= 1. 專題組 ================= -->
@@ -151,7 +145,7 @@
                     <div class="slider-track-wrapper">
                         <div class="slider-track" id="project-track">
                             <div class="slide-item"><a href="project/project01.html" target="_blank"
-                                    rel="noopener noreferrer"><img src="assets/DSC00271.JPG" alt="專題 01"></a></div>
+                                    rel="noopener noreferrer"><img src="assets/專題01.jpg" alt="專題 01"></a></div>
                             <div class="slide-item"><a href="project/project02.html" target="_blank"
                                     rel="noopener noreferrer"><img src="assets/專題02.jpg" alt="專題 02"></a></div>
                             <div class="slide-item"><a href="project/project03.html" target="_blank"
@@ -182,7 +176,7 @@
 
                 <!-- 專題左下角色 -->
                 <div class="char-badge project-char">
-                    <img src="assets/海報角色_專題.png" alt="海報角色">
+                    <img src="assets/mascot4.png" alt="海報角色">
                 </div>
 
                 <!-- 專題右下按鈕 -->
@@ -244,7 +238,7 @@
 
                 <!-- 論文右下角色 -->
                 <div class="char-badge paper-char">
-                    <img src="assets/海報角色_論文.png" alt="海報角色">
+                    <img src="assets/mascot5.png" alt="海報角色">
                 </div>
             </div>
 
@@ -254,6 +248,7 @@
             </div>
 
         </section>
+
         <footer>
             <div class="address">
                 <p>國立陽明交通大學傳播與科技學系</p>
@@ -261,10 +256,10 @@
             </div>
             <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined email">mail</span></a>
             <div class="contact">
-                <a href="https://www.instagram.com/dcatgrad116/"><img src="assets/ig.svg" alt="Instagram"></a>
-                <a href="https://www.facebook.com/CTGradShow/?rdid=o26HhXs2U5ZyQ8dX"><img src="assets/fb.svg" alt="Facebook"></a>
+                <a href=""><img src="assets/ig.svg" alt="Instagram"></a>
+                <a href=""><img src="assets/fb.svg" alt="Facebook"></a>
                 <a href="mailto:dcatgrad116@gmail.com"><span class="material-symbols-outlined mob-email">mail</span></a>
-        </div>
+            </div>
         </footer>
 
     </main>

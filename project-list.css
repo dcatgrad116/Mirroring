@@ -1,0 +1,369 @@
+/* ============================================================
+   基礎共用樣式 (Base)
+   ============================================================ */
+
+/* 預設隱藏手機版專用元素 */
+.mob-wrapper,
+.contact {
+    display: none;
+}
+
+/* 主容器 */
+.worklist {
+    height: auto;
+    position: relative;
+    overflow-x: clip;
+    padding-block: clamp(44px, 7.64vw, 110px) clamp(40px, 4.2vw, 60px);
+    padding-inline: clamp(16px, 3.6vw, 24px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(24px, 3.6vw, 52px);
+}
+
+/* 頂部 Hero 卡片 */
+.work-hero {
+    width: 100%;
+    max-width: 1160px;
+    margin-inline: auto;
+    padding: clamp(41px, 10.8vw, 156px) clamp(24px, 32.6vw, 470px);
+    border-top-left-radius: clamp(75px, 15.97vw, 230px);
+    border-top-right-radius: clamp(75px, 15.97vw, 230px);
+    background-color: rgba(255, 255, 255, 0.10);
+    box-shadow: inset 0 4px 54.4px 0 rgba(255, 255, 255, 0.75);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.work-hero p {
+    font-family: "Noto Serif TC", serif;
+    font-weight: 700;
+    white-space: nowrap;
+    color: #003660;
+    text-shadow: 0 0 11.1px rgba(255, 255, 255, 0.8);
+}
+
+.work-hero .kicker {
+    font-size: clamp(1rem, 2.5vw, 2.25rem);
+    letter-spacing: clamp(4.8px, 0.75vw, 10.8px);
+    margin-bottom: 8px;
+}
+
+.work-hero .heading {
+    font-size: clamp(1.25rem, 2.78vw, 2.5rem);
+    letter-spacing: clamp(10px, 1.39vw, 20px);
+    line-height: 1.5;
+}
+
+/* 作品網格 */
+.work-grid {
+    width: 100%;
+    max-width: 1160px;
+    margin-inline: auto;
+    display: grid;
+    position: relative;
+    z-index: 1;
+}
+
+/* 卡片基礎 */
+.work-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 圖片外框（基礎） */
+.card-media {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(130, 193, 198, 0.45);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 底層圖片 (z-index: 1) */
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    z-index: 1;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* 圖片上方 */
+.card-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: inherit;
+    background: rgba(130, 193, 198, 0.18);
+    backdrop-filter: blur(0.4px);
+    -webkit-backdrop-filter: blur(0.4px);
+    box-shadow: inset 0 0 10px 2px rgba(255, 255, 255, 0.55);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+/* 標題與文字基礎 */
+.card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ============================================================
+   桌機版響應式 (≥ 992px)
+   ============================================================ */
+@media (min-width: 992px) {
+    .work-hero p {
+        color: #FFFFFF;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 12 欄錯落佈局 */
+    .work-grid {
+        grid-template-columns: repeat(12, 1fr);
+        column-gap: clamp(20px, 3.5vw, 48px);
+        row-gap: clamp(40px, 6vw, 90px);
+        align-items: start;
+    }
+
+    .work-card {
+        grid-row: var(--row, auto);
+        grid-column: var(--col-start, auto) / span var(--col-span, 6);
+        transform: translateY(var(--offset-y, 0px));
+    }
+
+    .card-media {
+        aspect-ratio: var(--img-ar, 16/10);
+        border-radius: clamp(15px, 2.43vw, 35px);
+    }
+
+    /* 桌機 Hover 遮罩效果 (z-index: 3，浮在圖片與常態白邊上方) */
+    .overlay-hashtags {
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        padding: 20px;
+        z-index: 3;
+        border-radius: inherit;
+        background: radial-gradient(
+            circle at center, 
+            rgba(161, 173, 190, 0.17) 0%,
+            rgba(100, 118, 132, 0.6) 55%,
+            rgba(45, 59, 70, 0.94) 100%
+        );
+    }
+
+    .overlay-hashtags.vertical {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .overlay-hashtags span {
+        color: #FFFFFF;
+        font-family: "Noto Serif TC", serif;
+        font-size: clamp(0.9rem, 1.1vw, 1.15rem);
+        letter-spacing: 1px;
+    }
+
+    .work-card:hover .overlay-hashtags {
+        opacity: 1;
+    }
+
+    .work-card:hover .card-media img {
+        filter: brightness(0.7);
+        transform: scale(1.03);
+    }
+
+    .card-info {
+        margin-top: 14px;
+        gap: 4px;
+        padding-inline: 4px;
+    }
+
+    .card-no {
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 400;
+        font-size: clamp(1rem, 1.4vw, 1.35rem);
+        color: #FFFFFF;
+    }
+
+    .card-title {
+        font-family: "Noto Serif TC", serif;
+        font-weight: 500;
+        line-height: 1.35;
+        color: #FFFFFF;
+        letter-spacing: 1px;
+        font-size: 2rem;
+    }
+
+    .card-tags {
+        display: none;
+    }
+
+    /* 前往論文組按鈕 */
+    .to-paper {
+        align-self: center;
+        margin-top: 35px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 19px 63px;
+        line-height: 1.25;
+        border: 2px solid #548CA1;
+        border-radius: 50px;
+        background-image: linear-gradient(113deg, rgba(84, 140, 161, 0.3) 10%, rgba(54, 63, 89, 0.3) 68%);
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 700;
+        font-size: 1.5rem;
+        color: #FFFFFF;
+        text-decoration: none;
+        white-space: nowrap;
+        position: relative;
+        z-index: 1;
+        transition: all 0.3s ease;
+    }
+
+    .to-paper:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    /* 背景裝飾球 */
+    .work-deco {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
+
+    .work-deco img {
+        position: absolute;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .deco-ball3 {
+        right: 19%;
+        top: 37%;
+        width: clamp(180px, 18vw, 260px);
+    }
+
+    .deco-ball7 {
+        left: 18%;
+        top: 61%;
+        width: clamp(180px, 20vw, 260px);
+    }
+
+    .deco-ball4 {
+        right: 20%;
+        top: 85%;
+        width: clamp(200px, 22vw, 280px);
+    }
+
+    .address {
+        margin-left: 100px;
+    }
+
+    footer a:has(.email) {
+        margin-right: 100px;
+    }
+}
+
+/* ============================================================
+   行動裝置與平板響應式 (≤ 991px)
+   ============================================================ */
+@media (max-width: 991px) {
+    .work-deco,
+    .to-paper,
+    .overlay-hashtags,
+    footer > a:has(.email),
+    .email {
+        display: none !important;
+    }
+
+    .work-hero {
+        padding: 20px !important;
+        border-radius: 70px 70px 0 0 !important;
+    }
+
+    .work-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 12px;
+        row-gap: 20px;
+    }
+
+    .work-card {
+        grid-row: auto !important;
+        grid-column: auto / span 1 !important;
+        transform: none !important;
+        gap: 6px;
+    }
+
+    /* 統一為一般照片比例（16/10），自動依寬度縮放且不壓扁 */
+    .card-media {
+        width: 100%;
+        height: auto !important;
+        aspect-ratio: 16 / 10 !important;
+        border-radius: 15px;
+    }
+
+    /* 手機版白邊內陰影配合縮小 */
+    .card-media::after {
+        box-shadow: inset 0 4px 15px 3px rgba(255, 255, 255, 0.5);
+    }
+
+    .card-info {
+        margin-top: 4px;
+        gap: 3px;
+        padding-inline: 0;
+    }
+
+    .card-no {
+        color: #003660;
+        font-size: 0.85rem;
+        font-weight: 700;
+    }
+
+    .card-title {
+        font-family: "Noto Sans TC", sans-serif;
+        font-weight: 700;
+        font-size: 0.9rem;
+    }
+
+    .card-tags {
+        display: block;
+        font-family: "Noto Sans TC", sans-serif;
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.4;
+    }
+
+    /* 頁尾聯絡資訊 */
+    .contact {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 24px !important;
+        margin-top: 10px !important;
+    }
+
+    .contact .mob-email {
+        display: inline-block !important;
+        color: #FFFFFF !important;
+        font-size: 24px !important;
+    }
+}

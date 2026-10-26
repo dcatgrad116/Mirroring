@@ -255,3 +255,71 @@
         word-break: break-all;
     }
 }
+
+
+/* ===== 圖片 hover 特效（同 project-list） ===== */
+.work-media {
+    position: relative;
+}
+
+.work-media img {
+    position: relative;
+    z-index: 1;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* 圖片上的白色內發光 */
+.work-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    border-radius: inherit;
+    background: rgba(130, 193, 198, 0.18);
+    box-shadow: inset 0 0 10px 2px rgba(255, 255, 255, 0.55);
+}
+
+/* hashtag 遮罩只在電腦版（有滑鼠）出現 */
+.overlay-hashtags {
+    display: none;
+}
+
+@media (min-width: 992px) {
+    .overlay-hashtags {
+        pointer-events: none;
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        padding: 20px;
+        border-radius: inherit;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background: radial-gradient(
+            circle at center,
+            rgba(161, 173, 190, 0.17) 0%,
+            rgba(100, 118, 132, 0.6) 55%,
+            rgba(45, 59, 70, 0.94) 100%
+        );
+    }
+
+    .overlay-hashtags span {
+        color: #FFFFFF;
+        font-family: "Noto Serif TC", serif;
+        font-size: clamp(0.9rem, 1.1vw, 1.15rem);
+        letter-spacing: 1px;
+    }
+
+    .work-item:hover .overlay-hashtags {
+        opacity: 1;
+    }
+
+    .work-item:hover .work-media img {
+        filter: brightness(0.7);
+        transform: scale(1.03);
+    }
+}

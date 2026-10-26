@@ -172,6 +172,50 @@
     border-radius: 50%;
 }
 
+/* hover 時第二張照片以扇形順時針掃出 */
+@property --sweep {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.avatar {
+    position: relative;
+}
+
+.avatar .avatar-hover {
+    position: absolute;
+    inset: 0;
+    --sweep: 0deg;
+    --feather: 100deg; /* 霧化寬度：數字越大，掃動的邊越柔和 */
+    --sweep-end: calc(360deg + var(--feather));
+    /* 掃動的邊緣是一段由深到淺的漸層（中間多放兩個點讓過渡更平滑）；
+       起點（12 點方向）也先淡入，掃完時才完全合起來 */
+    --sweep-mask: conic-gradient(
+        transparent 0deg,
+        #000 min(var(--sweep) * 0.5, (var(--sweep-end) - var(--sweep)) * 0.2),
+        #000 calc(var(--sweep) - var(--feather)),
+        rgb(0 0 0 / 0.6) calc(var(--sweep) - var(--feather) * 0.6),
+        rgb(0 0 0 / 0.2) calc(var(--sweep) - var(--feather) * 0.25),
+        transparent var(--sweep)
+    );
+    -webkit-mask-image: var(--sweep-mask);
+    mask-image: var(--sweep-mask);
+    filter: blur(6px);
+    transition: --sweep 1s ease, filter 1s ease;
+}
+
+.member-card:hover .avatar-hover {
+    --sweep: calc(360deg + var(--feather));
+    filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .avatar .avatar-hover {
+        transition: none;
+    }
+}
+
 .member-caption {
     display: flex;
     flex-direction: column;

@@ -512,7 +512,7 @@ h3 {
 }
 
 /* 贊助廠商品牌 */
-.brands {
+/* .brands {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -530,7 +530,62 @@ h3 {
     color: #FFFFFF;
     text-decoration: none;
     font-family: Noto Sans TC;
+} */
+
+.brands {
+    display: flex;
+    flex-direction: row;
+    
+    /* 🛠️ 關鍵 1：允許內容自動換行，當第一行擠不下第 6 個時會自動掉到第二行 */
+    flex-wrap: wrap; 
+    
+    /* 🛠️ 關鍵 2：改成 space-baseline 或 space-around，並維持自動調配位置 */
+    justify-content: center; /* 💡 推薦用 center，如果第二行只有 2-3 個，它們會在中間置中，視覺最平衡 */
+    
+    /* 🛠️ 關鍵 3：設定「左右間距」與「上下行間距」 */
+    column-gap: clamp(20px, 3vw, 50px); /* 每個方塊左右的固定/響應式安全間距 */
+    row-gap: clamp(20px, 3vw, 40px);    /* 👈 第一檔與第二行之間的上下距離 */
+    
+    width: 100%;
+    max-width: 1000px; /* 限制總寬度，確保到一定寬度時會自然換行 */
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 70px;
 }
+
+
+.brand-logo {
+    width: clamp(120px, 20vw, 180px);
+    height: clamp(120px, 20vw, 180px);
+    /* background-color: #000; */
+    border-radius: clamp(13px, 1.39vw, 20px);
+    
+    /* 🛠️ 新增：讓框框本身變成 Flex 容器，強制裡面的東西置中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* 防止任何內容超出這個黑色圓角框 */
+}
+
+.brand-logo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: Noto Sans TC;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 3%;       
+    box-sizing: border-box;
+}
+
 
 /* footer */
 footer {

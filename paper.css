@@ -517,3 +517,46 @@
         font-weight: 700;
     }
 }
+
+/* ===== Results 標題 + 星星線（同專題組 How It Works） ===== */
+.section-heading-gold h2 {
+    font-family: "Noto Serif TC", serif;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    color: #dfba73;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.section-heading-gold.right-aligned {
+    text-align: right;
+}
+
+.diamond-divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin: 8px 0 0 0;
+    overflow: hidden;
+}
+
+.diamond-divider img {
+    flex: 1;
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 991px) {
+    .diamond-divider {
+        display: none !important;
+    }
+
+    .section-heading-gold h2,
+    .section-heading-gold.right-aligned {
+        font-size: 1.4rem;
+        text-align: left;
+        margin-bottom: 0;
+    }
+}

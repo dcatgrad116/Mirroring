@@ -32,6 +32,10 @@ body.intro-locked {
 
     opacity: 1;
     transition: opacity 1s ease;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 #intro-video.fade-out {
@@ -43,6 +47,23 @@ body.intro-locked {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.intro-hint {
+    position: absolute;
+    bottom: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-family: "Noto Sans TC", sans-serif;
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+}
+
+#intro-video.speeding .intro-hint::after {
+    content: " ▶▶ 3×";
 }
 
 /* 導覽列 */

@@ -29,6 +29,31 @@ $(function () {
     video.addEventListener('ended', hideIntro);
     video.addEventListener('error', hideIntro);
 
+    // ===== 長按加速 =====
+    var HOLD_DELAY = 70;   // 按住超過幾毫秒才算長按
+    var FAST_RATE  = 3;     // 加速倍率
+    var holdTimer  = null;
+
+    function startHold(e) {
+        if (introEnded) return;
+        if (e.button !== undefined && e.button !== 0) return;  // 只認左鍵／手指
+        clearTimeout(holdTimer);
+        holdTimer = setTimeout(function () {
+            video.playbackRate = FAST_RATE;
+            $intro.addClass('speeding');
+        }, HOLD_DELAY);
+    }
+
+    function endHold() {
+        clearTimeout(holdTimer);
+        video.playbackRate = 1;
+        $intro.removeClass('speeding');
+    }
+
+    $intro.on('pointerdown', startHold);
+    $intro.on('contextmenu', function (e) { e.preventDefault(); });
+    $(window).on('pointerup pointercancel', endHold);
+
     var maxWaitTime = 8000;
     setTimeout(hideIntro, maxWaitTime);
 });

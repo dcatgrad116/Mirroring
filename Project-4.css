@@ -727,6 +727,7 @@ html, body {
     .fullscreen-section {
         overflow: visible;
         min-height: auto;
+        
         padding: 40px 18px 30px 18px;
     }
 
@@ -766,25 +767,48 @@ html, body {
     }
 
     /* --- 6. TEAM & 成員卡片  --- */
-    .team-main-card {
-        flex-direction: column;
-        gap: 15px;
-        margin-bottom: 25px;
-    }
-
-    .team-image-frame {
+.team-main-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100% !important;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+  .section-inner-content .team-image-frame {
         display: none;
     }
+.team-about-content {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
 
-    .team-about-content h3 {
-        font-size: 1.3rem;
-        margin-bottom: 8px;
-    }
+.team-about-content h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-align: left;
+    width: 100%;
+}
 
-    .team-about-content p {
-        font-size: 0.95rem;
-        line-height: 1.6;
-    }
+.team-about-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    word-break: break-word; /* 避免文字超出版面 */
+    margin-bottom: 16px;
+    width: 100%;
+}
+
+.team-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 10px;
+}
 
     .members-grid {
         display: grid;
@@ -957,3 +981,4 @@ html, body {
     }
  
 }
+

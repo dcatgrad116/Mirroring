@@ -20,7 +20,20 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap" rel="stylesheet">
-    <title>友話想說</title>
+    <title>專題</title>
+    <style>
+    /* 1. 確保 Visual Outcomes 區塊底部留有足夠推開 Footer 的內距 */
+#visual-section {
+    padding-bottom: 120px !important; /* 數值可依喜好調整，如 100px ~ 150px */
+}
+
+/* 2. 避免負邊距拉扯，讓按鈕維持往下推開的間距 */
+.back-btn-container {
+    margin-top: 70px !important;
+    
+}
+
+    </style>
 </head>
 <body>
 
@@ -195,7 +208,9 @@
             </div>
         </section>
 
-        <!-- ================= 3. Visual Outcomes (第 4 屏) ================= -->
+       
+
+       <!-- ================= 3. Visual Outcomes (第 4 屏) ================= -->
         <section class="fullscreen-section content-screen" id="visual-section">
             <div class="section-inner-content">
                 <div class="section-heading-gold">
@@ -223,17 +238,12 @@
                     </div>
                 </div>
 
-                
+                <!-- 底部回專題按鈕（移至區塊內部） -->
+                <div class="back-btn-container">
+                    <a href="../project-list.html" class="btn-back-topic">回專題頁</a>
+                </div>
             </div>
-
-        
         </section>
-
-        <!-- 底部回專題按鈕 -->
-        <div class="back-btn-container">
-            <a href="../project-list.html" class="btn-back-topic">回專題頁</a>
-        </div>
-    </div>
 </section>
    <!-- 頁尾 -->
 <footer>

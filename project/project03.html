@@ -254,64 +254,91 @@
      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../script.js"></script>
     <!-- JavaScript 輪播邏輯 -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            function createCarousel(trackId, prevBtnId, nextBtnId, autoInterval = 4000) {
-                const track = document.getElementById(trackId);
-                const prevBtn = document.getElementById(prevBtnId);
-                const nextBtn = document.getElementById(nextBtnId);
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        /**
+         * 建立純手動輪播控制器
+         * @param {string} trackId - 輪播軌道 ID
+         * @param {string} prevBtnId - 上一張按鈕 ID
+         * @param {string} nextBtnId - 下一張按鈕 ID
+         */
+        function createCarousel(trackId, prevBtnId, nextBtnId) {
+            const track = document.getElementById(trackId);
+            const prevBtn = document.getElementById(prevBtnId);
+            const nextBtn = document.getElementById(nextBtnId);
 
-                if (!track || !prevBtn || !nextBtn) return;
+            if (!track || !prevBtn || !nextBtn) return;
 
-                const frameContainer = track.closest('.glass-slider-frame') || track.parentElement;
-                const slides = track.querySelectorAll('.slide-item');
-                const total = slides.length;
-                let index = 0;
-                let timer = null;
+            const slides = track.querySelectorAll('.slide-item');
+            const total = slides.length;
+            if (total === 0) return;
 
-                function updatePosition() {
-                    track.style.transform = `translateX(-${index * 100}%)`;
-                }
+            let index = 0;
+            let isTransitioning = false; 
 
-                function showNext() {
-                    index = (index + 1) % total;
-                    updatePosition();
-                }
-
-                function showPrev() {
-                    index = (index - 1 + total) % total;
-                    updatePosition();
-                }
-
-                nextBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    showNext();
-                    resetAuto();
-                });
-
-                prevBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    showPrev();
-                    resetAuto();
-                });
-
-                function startAuto() {
-                    timer = setInterval(showNext, autoInterval);
-                }
-
-                function resetAuto() {
-                    clearInterval(timer);
-                    startAuto();
-                }
-
-                frameContainer.addEventListener('mouseenter', () => clearInterval(timer));
-                frameContainer.addEventListener('mouseleave', () => startAuto());
-
-                startAuto();
+   
+            function updatePosition() {
+                track.style.transform = `translateX(-${index * 100}%)`;
             }
 
-            createCarousel('visual-track', 'visual-prev', 'visual-next', 4000);
-        });
-    </script>
+            function showNext() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                index = (index + 1) % total;
+                updatePosition();
+            }
+
+          
+            function showPrev() {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                index = (index - 1 + total) % total;
+                updatePosition();
+            }
+
+            // 動畫過渡結束後解鎖點擊
+            track.addEventListener('transitionend', () => {
+                isTransitioning = false;
+            });
+
+            
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showNext();
+            });
+
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                showPrev();
+            });
+
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            track.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeDistance = touchEndX - touchStartX;
+                const threshold = 40; // 滑動觸發門檻（像素）
+
+                if (swipeDistance < -threshold) {
+                    showNext(); // 向左滑動 -> 下一張
+                } else if (swipeDistance > threshold) {
+                    showPrev(); // 向右滑動 -> 上一張
+                }
+            }
+        }
+
+        // 初始化視覺成果輪播
+        createCarousel('visual-track', 'visual-prev', 'visual-next');
+    });
+</script>
 </body>
 </html>

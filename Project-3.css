@@ -607,6 +607,7 @@ nav hr {
     flex: 0 0 100%;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .slide-item img {
@@ -650,9 +651,8 @@ nav hr {
     line-height: 1.8;
     color: rgba(255, 255, 255, 0.9);
     margin-top: 40px;
-    text-align: justify;
-    padding-left: 100px;
-    padding-right: 100px;
+    text-align: center;
+    min-height: 70px;
 }
 
 /* ================= 4. How It Works ================= */

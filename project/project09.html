@@ -245,23 +245,23 @@
                     <div class="glass-slider-frame">
                         <div class="slider-track-wrapper">
                             <div class="slider-track" id="visual-track">
-                
-                                <div class="slide-item" data-desc="原創 12 集手繪圖文電子書 點擊圖片前往翻閱～">
-                                    <a href="https://reurl.cc/6XWGpM">
-                                        <img src="../assets/g9/Group9_4-1.png" alt="成果 01">
-                                    </a>
+
+                                <div class="slide-item" data-desc="手工裝訂繪本">
+
+                                    <img src="../assets/g9/Group9_4-1.jpg" alt="成果 01">
+
                                 </div>
-                
+
                                 <div class="slide-item" data-desc="漂流筆記本">
                                     <img src="../assets/g9/Group9_4-2.jpg" alt="成果 02"
-                                         style="object-position: center 40%;">
+                                        style="object-position: center 40%;">
                                 </div>
-                
+
                                 <div class="slide-item" data-desc="圖鑑貼紙周邊" style="overflow: hidden;">
-                                    <img src="../assets/g9/Group9_4-3.JPG" alt="成果 03"
-                                         style="transform: translateY(-30px) scale(1.3);">
+                                    <img src="../assets/g9/Group9_4-3.jpeg" alt="成果 03"
+                                        style="transform: translateY(-45px) scale(1.3);">
                                 </div>
-                
+
                             </div>
                         </div>
                         <button class="slider-btn btn-prev" id="visual-prev" type="button">&#10094;</button>
@@ -273,7 +273,7 @@
                     點擊圖片了解更多！
                 </p>
 
-               
+
             </div>
 
 
@@ -301,25 +301,29 @@
                                 <img src="../assets/starline-white.png" alt="垂直線條">
                             </div>
                             <div class="how-text-block">
-                                <p>原創 12 集手繪圖文電子書 <br>點擊圖片前往翻閱～</p>
+                                <p><strong style="font-weight: 650;">原創 12 集手繪圖文電子書</strong> <br>點擊圖片前往翻閱～ <br>
+                                    線上看不過癮？來展場看實體書吧！</p>
                             </div>
                         </div>
                         <div class="how-img-frame">
-                            <a href="https://reurl.cc/6XWGpM"><img src="../assets/g9/Group9_4-1.png" alt="成果 01"></a>
+                            <a href="https://reurl.cc/6XWGpM"><img src="../assets/g9/Group9_5-1.png" alt="成果 01"></a>
                         </div>
                     </div>
 
                     <!-- 第 2 組：左圖片 ＋ 右星星線 ＋ 右文字 -->
                     <div class="how-row">
                         <div class="how-img-frame">
-                            <img src="../assets/working.png" alt="說明圖片2">
+                            <a
+                                href="https://www.instagram.com/p/DfmifitGH2j/?utm_source=ig_web_copy_link&lqvp=MzRlODBiNWFlZA==&avpt=MzRlODBiNWFlZA=="><img
+                                    src="../assets/g9/Group9_5-2.jpg" alt="成果 02"></a>
                         </div>
                         <div class="how-text-wrapper">
                             <div class="vertical-star-divider">
                                 <img src="../assets/starline-white.png" alt="垂直線條">
                             </div>
                             <div class="how-text-block">
-                                <p>To be continued...</p>
+                                <p><strong style="font-weight: 650;">漂流筆記本之故事搜集 </strong><br> 點擊圖片前往查看更多故事節錄與畢茲的回應～ <br>
+                                    更加推薦來展場看完整故事並給予你的回應窩！</p>
                             </div>
                         </div>
                     </div>
@@ -358,70 +362,70 @@
                 const track = document.getElementById(trackId);
                 const prevBtn = document.getElementById(prevBtnId);
                 const nextBtn = document.getElementById(nextBtnId);
-        
+
                 if (!track || !prevBtn || !nextBtn) return;
-        
+
                 const frameContainer = track.closest('.glass-slider-frame') || track.parentElement;
                 const slides = track.querySelectorAll('.slide-item');
                 const total = slides.length;
-        
+
                 // 新增：取得文字區塊
                 const desc = document.getElementById('visual-desc');
-        
+
                 let index = 0;
                 let timer = null;
-        
+
                 function updatePosition() {
                     track.style.transform = `translateX(-${index * 100}%)`;
-        
+
                     // 新增：同步更新文字
                     if (desc && slides[index]) {
                         desc.textContent = slides[index].dataset.desc || '';
                     }
                 }
-        
+
                 function showNext() {
                     index = (index + 1) % total;
                     updatePosition();
                 }
-        
+
                 function showPrev() {
                     index = (index - 1 + total) % total;
                     updatePosition();
                 }
-        
+
                 nextBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     showNext();
                     resetAuto();
                 });
-        
+
                 prevBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
                     showPrev();
                     resetAuto();
                 });
-        
+
                 function startAuto() {
                     clearInterval(timer);
                     timer = setInterval(showNext, autoInterval);
                 }
-        
+
                 function resetAuto() {
                     startAuto();
                 }
-        
+
                 frameContainer.addEventListener('mouseenter', () => clearInterval(timer));
                 frameContainer.addEventListener('mouseleave', startAuto);
-        
+
                 // 初始化第一張圖片及文字
                 updatePosition();
                 startAuto();
             }
-        
+
             createCarousel('visual-track', 'visual-prev', 'visual-next', 4000);
         });
-        </script>
+    </script>
 </body>
 
 </html>
